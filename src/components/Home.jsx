@@ -1,5 +1,5 @@
 import React from 'react'
-
+import img1 from "../assets/img1.jpg"
 const features = [
   { name: 'Origin', description: 'Designed by Good Goods, Inc.' },
   { name: 'Material', description: 'Solid walnut base with rare earth magnets and powder coated steel card cover' },
@@ -21,8 +21,8 @@ const Home = () => {
         <div className="grid grid-cols-1 w-80 h-80 justify-end">
           <img
             alt="Walnut card tray with white powder coated steel divider and 3 punchout holes."
-            src="https://tailwindui.com/img/ecommerce-images/product-feature-03-detail-01.jpg"
-            className="rounded-lg bg-gray-800"
+            src={img1}
+            className="rounded-lg bg-gray-800 w-80 h-80 mt-4"
           />
         </div>
       </div>
