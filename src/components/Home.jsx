@@ -1,33 +1,65 @@
-import React from 'react'
-import img1 from "../assets/img1.jpg"
+import React from 'react';
+import img1 from "../assets/img1.jpg";
+import { motion } from "framer-motion";
+
 const features = [
   { name: 'Origin', description: 'Designed by Good Goods, Inc.' },
   { name: 'Material', description: 'Solid walnut base with rare earth magnets and powder coated steel card cover' },
-]
+];
+
+const container = (delay) => ({
+  hidden: { x: -100, opacity: 0 },
+  visible: {
+    x: 0,
+    opacity: 1,
+    transition: { duration: 0.5, delay: delay },
+  },
+});
 
 const Home = () => {
   return (
     <div>
-      <div className="mx-auto grid max-w-xl grid-cols-1 items-center gap-x-16 gap-y-16 px-4 py-24 sm:px-6 sm:py-32 lg:max-w-6xl lg:grid-cols-2 lg:px-8">
-        <div>
-          <h2 className="text-3xl font-bold tracking-tight text-gray-200 sm:text-4xl">Ahmad Ali</h2>
-          <h5 className="text-l mt-10 tracking-tight text-gray-200 sm:text-l">Full Stack Developer</h5>
+      <div className="mt-6 mx-auto grid max-w-xl grid-cols-1 items-center gap-x-16 gap-y-16 px-4 py-24 sm:px-6 sm:py-32 lg:max-w-6xl lg:grid-cols-2 lg:px-8">
+        <div className="px-4 sm:px-6 lg:px-8">
+          <motion.h2
+            variants={container(0)}
+            initial="hidden"
+            animate="visible"
+            className="text-3xl font-bold tracking-tight text-gray-200 sm:text-4xl"
+          >
+            Ahmad Ali
+          </motion.h2>
+          <motion.h5
+            variants={container(0.5)}
+            initial="hidden"
+            animate="visible"
+            className="text-l mt-10 tracking-tight text-gray-200 sm:text-l"
+          >
+            Full Stack Developer
+          </motion.h5>
 
-          <p className="mt-4 text-gray-200">
-          Full stack developer with 2 years of experience in JavaScript, React, Node.js, Express.js, and MongoDB. Skilled in MERN stack, Redux Toolkit, JWT authentication, and Git. Focused on user experience, SEO, and efficient state management. Passionate about solving complex problems and continuously learning new technologies.          </p>
-
-         
+          <motion.p
+            variants={container(1)}
+            initial="hidden"
+            animate="visible"
+            className="mt-4 text-gray-200"
+          >
+            Full stack developer with 2 years of experience in JavaScript, React, Node.js, Express.js, and MongoDB. Skilled in MERN stack, Redux Toolkit, JWT authentication, and Git. Focused on user experience, SEO, and efficient state management. Passionate about solving complex problems and continuously learning new technologies.
+          </motion.p>
         </div>
-        <div className="grid grid-cols-1 w-80 h-80 justify-end">
-          <img
+        <div className="flex justify-center lg:justify-end">
+          <motion.img
+            initial={{ x: 100, opacity: 0 }}
+            animate={{ x: 0, opacity: 1 }}
+            transition={{ duration: 1, delay: 1.2 }}
             alt="Walnut card tray with white powder coated steel divider and 3 punchout holes."
             src={img1}
-            className="rounded-lg bg-gray-800 w-80 h-80 mt-4"
+            className="rounded-lg bg-gray-800 w-80 h-80"
           />
         </div>
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default Home
+export default Home;
