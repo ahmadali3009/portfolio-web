@@ -1,7 +1,7 @@
-import image from "../assets/mongo-svgrepo-com.svg"
-import image2 from "../assets/mongo-svgrepo-com.svg"
-import image3 from "../assets/mongo-svgrepo-com.svg"
-import image4 from "../assets/mongo-svgrepo-com.svg"
+import image from "../assets/pro11.png"
+import image2 from "../assets/pro22.png"
+import image3 from "../assets/pro3.png"
+import image4 from "../assets/pro4.png"
 
 
 export const EXPERIENCES = [
@@ -32,18 +32,21 @@ export const PROJECTS = [
     },
     {
         title: "user-details",
+        link: "https://github.com/ahmadali3009/userdetailMERN-Reduxtoolkit",
         image: image2,
         description: "Developed a comprehensive user management system.",
         technologies: ["React", "Node.js", "MongoDB" , "Expressjs" , "Redux/Toolkit"],
     },
     {
         title: "Blog site",
+        link: "https://github.com/ahmadali3009/blogsitenodejs",
         image:image3,
         description: "Built a cloud-based note-taking application with secure authentication.",
         technologies: ["React", "Node.js", "MongoDB" , "Expressjs" , "EJS" , "JWT"],
     },
     {
-        title: "Ecommerce site(static)",
+        title: "Ecommerce site",
+        link: "https://jovialhub222.netlify.app",
         image: image4,
         description: "Built a responsive e-commerce website with a focus on user experience and interface.",
         technologies: ["React"],
@@ -51,7 +54,7 @@ export const PROJECTS = [
 ]
 
 export const CONTACT = {
-    address : "al-taif",
-    phone : "0311-7694349",
+    address : "Al-Taif hayi nabah",
+    phone : "0574995058",
     email : "abutt3009@gmail.com"
 }

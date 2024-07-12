@@ -10,10 +10,10 @@ const features = [
 const About = () => {
   return (
     <div>
-      <div className="bg-gray-800 mt-12">
-        <h1 className="text-center text-3xl">
+      <div className="bg-custom-dark-blue mt-12">
+        <h1 className="text-center text-3xl text-white">
           About
-          <span className="text-neutral-500"> Me</span>
+          <span className="text-purple-800"> Me</span>
         </h1>
       </div>
       <div className="mx-auto grid max-w-xl grid-cols-1 items-center gap-x-16 gap-y-16 px-4 py-24 sm:px-6 sm:py-32 lg:max-w-6xl lg:grid-cols-2 lg:px-8">

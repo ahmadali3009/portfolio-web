@@ -2,10 +2,6 @@ import React from 'react';
 import img1 from "../assets/img1.jpg";
 import { motion } from "framer-motion";
 
-const features = [
-  { name: 'Origin', description: 'Designed by Good Goods, Inc.' },
-  { name: 'Material', description: 'Solid walnut base with rare earth magnets and powder coated steel card cover' },
-];
 
 const container = (delay) => ({
   hidden: { x: -100, opacity: 0 },
@@ -25,18 +21,18 @@ const Home = () => {
             variants={container(0)}
             initial="hidden"
             animate="visible"
-            className="text-3xl font-bold tracking-tight text-gray-200 sm:text-4xl"
+            className="text-4xl font-semiboldd tracking-tight text-gray-200 sm:text-4xl"
           >
             Ahmad Ali
           </motion.h2>
-          <motion.h5
+          <motion.h1
             variants={container(0.5)}
             initial="hidden"
             animate="visible"
-            className="text-l mt-10 tracking-tight text-gray-200 sm:text-l"
-          >
+            className="text-2xl mt-10 tracking-tight bg-gradient-to-r from-white via-purple-500 to-purple-700 bg-clip-text text-transparent sm:text-l"
+            >
             Full Stack Developer
-          </motion.h5>
+          </motion.h1>
 
           <motion.p
             variants={container(1)}

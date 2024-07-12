@@ -21,15 +21,15 @@ const Skillsicon = () => {
     })
     return (
         <>
-            <div className="bg-gray-800 mb-12">
+            <div className="bg-custom-dark-blue my-20">
                 <motion.h1 whileInView={{opacity:1 , y:0}}
                 initial={{opacity:0 , y:-100}}
                 transition={{duration:1.5}}
                 // animate={{opacity:0 , y:-100}}
                 // transition={{delay:1.2 , duration:2.5}}
-                 className="text-center text-3xl">
+                 className="text-center text-3xl text-white">
                     Techno
-                    <span className="text-neutral-500">logies</span>
+                    <span className="text-purple-800">logies</span>
                 </motion.h1>
             </div>
             <motion.div whileInView={{x:0 , opacity:1}}
