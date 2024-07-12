@@ -26,6 +26,7 @@ export const EXPERIENCES = [
 export const PROJECTS = [
     {
         title: "Cloud APP",
+        link: "https://github.com/ahmadali3009/cloud-app-note",
         image: image,
         description: "Built a cloud-based note-taking application with secure authentication.",
         technologies: ["React", "Node.js", "MongoDB" , "Expressjs" , "JWT"],
