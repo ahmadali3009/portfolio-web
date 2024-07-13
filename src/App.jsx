@@ -7,12 +7,14 @@ import Skillsicon from './components/Skillsicon'
 import Experience from './components/Experience'
 import Projects from './components/Projectsdetail'
 import Contact from './components/contact'
+import LanguageSwitcher from './components/langswitch'
 function App() {
 
   return (
     <>
     <div>
       <Navbar/>
+      <LanguageSwitcher/>
       <Home/>
       <About/>
       <Skillsicon/>

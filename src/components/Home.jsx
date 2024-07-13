@@ -1,7 +1,9 @@
+// src/Home.js
 import React from 'react';
+import { useTranslation } from 'react-i18next';
 import img1 from "../assets/img1.jpg";
 import { motion } from "framer-motion";
-
+import { HOMEEN, HOMEAR } from '../constants'; // Import constants for multilingual content
 
 const container = (delay) => ({
   hidden: { x: -100, opacity: 0 },
@@ -13,6 +15,11 @@ const container = (delay) => ({
 });
 
 const Home = () => {
+  const { t, i18n } = useTranslation();
+
+  // Determine which language content to use based on current language
+  const homeContent = i18n.language === 'ar' ? HOMEAR[0] : HOMEEN[0];
+
   return (
     <div>
       <div className="mt-6 mx-auto grid max-w-xl grid-cols-1 items-center gap-x-16 gap-y-16 px-4 py-24 sm:px-6 sm:py-32 lg:max-w-6xl lg:grid-cols-2 lg:px-8">
@@ -21,17 +28,17 @@ const Home = () => {
             variants={container(0)}
             initial="hidden"
             animate="visible"
-            className="text-4xl font-semiboldd tracking-tight text-gray-200 sm:text-4xl"
+            className="text-4xl font-semibold tracking-tight text-gray-200 sm:text-4xl"
           >
-            Ahmad Ali
+            {homeContent.greeting}
           </motion.h2>
           <motion.h1
             variants={container(0.5)}
             initial="hidden"
             animate="visible"
             className="text-2xl mt-10 tracking-tight bg-gradient-to-r from-white via-purple-500 to-purple-700 bg-clip-text text-transparent sm:text-l"
-            >
-            Full Stack Developer
+          >
+            {homeContent.title}
           </motion.h1>
 
           <motion.p
@@ -40,7 +47,7 @@ const Home = () => {
             animate="visible"
             className="mt-4 text-gray-200"
           >
-            Full stack developer with 2 years of experience in JavaScript, React, Node.js, Express.js, and MongoDB. Skilled in MERN stack, Redux Toolkit, JWT authentication, and Git. Focused on user experience, SEO, and efficient state management. Passionate about solving complex problems and continuously learning new technologies.
+            {homeContent.description}
           </motion.p>
         </div>
         <div className="flex justify-center lg:justify-end">

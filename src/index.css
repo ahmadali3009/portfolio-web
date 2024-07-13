@@ -4,8 +4,20 @@
 
 :root {
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
-  line-height: 1.5;
-  font-weight: 400;
+  /* line-height: 1.5; */
+  /* font-weight: 400; */
   background-color: rgb(9, 0, 26)
 }
 
+html, body {
+  max-width: 100%;
+  overflow-x: hidden;
+}
+* {
+  box-sizing: border-box;
+}
+
+.container {
+  max-width: 100%;
+  overflow-x: hidden;
+}

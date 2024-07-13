@@ -3,6 +3,8 @@ import { RiReactjsLine } from "react-icons/ri";
 import { SiExpress , SiMongodb , SiRedux  } from "react-icons/si";
 import { FaNodeJs , FaPhp  } from "react-icons/fa";
 import { FaGitAlt } from "react-icons/fa6";
+import { useTranslation } from 'react-i18next';
+
 import { animate, motion } from "framer-motion"
 
 
@@ -19,19 +21,20 @@ const Skillsicon = () => {
             }
         }
     })
+    const { t, i18n } = useTranslation();
+    const technologies = t('technologies.data', { returnObjects: true });
+
     return (
         <>
             <div className="bg-custom-dark-blue my-20">
-                <motion.h1 whileInView={{opacity:1 , y:0}}
-                initial={{opacity:0 , y:-100}}
-                transition={{duration:1.5}}
-                // animate={{opacity:0 , y:-100}}
-                // transition={{delay:1.2 , duration:2.5}}
-                 className="text-center text-3xl text-white">
-                    Techno
-                    <span className="text-purple-800">logies</span>
-                </motion.h1>
-            </div>
+        <motion.h1 whileInView={{ opacity: 1, y: 0 }}
+          initial={{ opacity: 0, y: -100 }}
+          transition={{ duration: 1.5 }} className="text-center text-3xl text-white">
+          {t('technologies.titlePart1')}
+          <span className="text-purple-800">{t('technologies.titlePart2')}</span>
+        </motion.h1>
+      </div>
+
             <motion.div whileInView={{x:0 , opacity:1}}
           initial={{x:-100 , opacity:0}}
           transition={{duration:1 , delay : 0.5} }  className="flex flex-wrap items-center justify-center gap-4">
