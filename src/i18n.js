@@ -12,7 +12,7 @@ const resources = {
       about: {
         title: "About ",
         title2:"Me",
-        content: "I am a full stack developer with 2 years of experience in building dynamic web applications. My expertise spans across JavaScript, React, Node.js, Express.js, and MongoDB, with a strong proficiency in the MERN stack, Redux Toolkit, JWT authentication, and Git for version control. I am dedicated to enhancing user experience, optimizing website SEO, and ensuring efficient state management. My passion lies in solving complex problems and continuously learning new technologies to stay ahead in the ever-evolving tech landscape. I am committed to delivering high-quality, scalable solutions for modern web development challenges",
+        content: "I am a full stack developer with 3 years of experience in building dynamic web applications. My expertise spans across JavaScript, React, Node.js, Express.js, and MongoDB, with a strong proficiency in the MERN stack, Redux Toolkit, JWT authentication, and Git for version control. I am dedicated to enhancing user experience, optimizing website SEO, and ensuring efficient state management. My passion lies in solving complex problems and continuously learning new technologies to stay ahead in the ever-evolving tech landscape. I am committed to delivering high-quality, scalable solutions for modern web development challenges",
       },
       experiences: {
         title: "Experi",

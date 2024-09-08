@@ -55,24 +55,36 @@ export const EXPERIENCES_AR = [
 
 export const PROJECTS_EN = [
     {   
-        title: "Cloud APP",
-        link: "https://github.com/ahmadali3009/cloud-app-note",
+        title: "Cloud Note",
+        link: "https://cloud-note-frontend.onrender.com",
         image: image,
-        description: "Built a cloud-based note-taking application with secure authentication.",
+        description: `• Utilized the MERN stack (MongoDB, ExpressJS, ReactJS, Node.js) for full-stack development\n
+• Implemented JWT-based authentication for secure user sessions.\n
+• Enhanced password security using bcrypt with salt for hashing.\n
+• Stored data securely in the cloud using MongoDB Atlas.\n
+• Ensured that only the respective user can view their notes, maintaining privacy and security.\n
+• Styled the frontend with TailwindCSS for a responsive and modern UI.`,
         technologies: ["React", "Node.js", "MongoDB" , "Expressjs" , "JWT"],
     },
     {
         title: "user-details",
         link: "https://github.com/ahmadali3009/userdetailMERN-Reduxtoolkit",
         image: image2,
-        description: "Developed a comprehensive user management system.",
+        description: `• Developed a comprehensive user management system.\n
+    • Technologies: ReactJS, Node.js, ExpressJS, MongoDB, Redux Toolkit.\n
+    • Managed state and data flow within the application.\n
+    • Used Thunk to handle data retrieval and submission via RESTful APIs.`,
         technologies: ["React", "Node.js", "MongoDB" , "Expressjs" , "Redux/Toolkit"],
     },
     {
         title: "Blog site",
         link: "https://github.com/ahmadali3009/blogsitenodejs",
         image:image3,
-        description: "Built a cloud-based note-taking application with secure authentication.",
+        description: `• Technologies: Node.js, MongoDB, ExpressJS, EJS, JWT\n
+    • Implemented authentication and authorization using stateless JWT for secure access.\n
+    • Developed role-based access control to manage different user levels and permissions.\n
+    • Built comment functionality to enhance user interaction within the application.\n
+    • Integrated Multer for efficient picture upload and management.`,
         technologies: ["React", "Node.js", "MongoDB" , "Expressjs" , "EJS" , "JWT"],
     },
     {
