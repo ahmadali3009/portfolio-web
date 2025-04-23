@@ -47,13 +47,53 @@ export const EXPERIENCES_AR = [
       year: "2023 إلى فبراير 2024",
       role: "مطور متكامل",
       company: "بايتلينكس",
-      description: `خلال فترة عملي في بايتلينكس، انخرطت في تطوير الويب الكامل باستخدام PHP وCodeIgniter، مما يضمن حلول قوية وفعالة. عملت أيضًا بشكل مكثف مع MERN stack، مما يظهر تعدد مهاراتي في تقنيات الويب الحديثة. بالإضافة إلى ذلك، قمت بتحسين الوظائف الخلفية وأداء تحسين محركات البحث الشامل، مما ساهم في تحسين أداء الموقع وزيادة رؤيته.`,
+      description: `خلال فترة عملي في بايتلينكس، انخرطت في تطوير الويب الكامل باستخدام PHP وCodeIgniter، مما يضمن حلول قوية وفعالة. عملت < بشكل مكثف مع MERN stack، مما يظهر تعدد مهاراتي في تقنيات الويب الحديثة. بالإضافة إلى ذلك، قمت بتحسين الوظائف الخلفية وأداء تحسين محركات البحث الشامل، مما ساهم في تحسين أداء الموقع وزيادة رؤيته.`,
       technologies: ["جافاسكريبت", "React.js", "Expressjs", "mongoDB", "php", "nodejs"],
     },
   ];
   
 
 export const PROJECTS_EN = [
+    {
+        title: "Movie Discovery Application",
+        link: "https://github.com/ahmadali3009/movie-app",
+        image: image, // You'll need to import the appropriate image
+        description: `Core Features:\n
+• Movie Discovery: Popular movies, top-rated TV shows, featured content rotation\n
+• Search System: Real-time movie search with results display\n
+• Detailed Views: Comprehensive movie/TV show information pages\n
+• JWT Authentication: Secure access with token validation & expiration handling\n
+• Responsive Design: Mobile-friendly layouts adapting to all screen sizes\n
+Main Functions:\n
+• returndata(): Fetches popular movies from TMDB API\n
+• Fmoviesbyid(): Retrieves specific movie details by ID\n
+• searchFetch(): Processes user search queries\n
+• FetchTopRated(): Gets authenticated top-rated TV content\n
+• jwtDecode(): Validates user authentication tokens\n
+• handlepage()/handlepreviouspage(): Controls pagination\n
+• handlesearch()/searchbuttton(): Manages search functionality\n
+UI Components:\n
+• HeroBanner: Showcases featured movies with auto-rotation\n
+• MovieCard: Displays movie information in card format\n
+• Moviedetail/MovieDetail2: Renders detailed movie/TV information\n
+• Loading states with skeleton loaders for better UX\n
+Technical Implementation:\n
+• React Query for efficient data fetching & caching\n
+• React Router for seamless navigation between views\n
+• Responsive CSS with media queries & flexible layouts\n
+• Modern visual effects including animations & gradients\n
+• Token-based authentication with expiration handling`,
+        technologies: [
+            "React",
+            "React Query",
+            "React Router",
+            "JWT",
+            "TMDB API",
+            "CSS3",
+            "REST API",
+            "Authentication"
+        ],
+    },
     {   
         title: "Cloud Note",
         link: "https://cloud-note-frontend.onrender.com",
@@ -88,15 +128,92 @@ export const PROJECTS_EN = [
         technologies: ["React", "Node.js", "MongoDB" , "Expressjs" , "EJS" , "JWT"],
     },
     {
-        title: "Ecommerce site",
+        title: "Ecommerce site(static site)",
         link: "https://jovialhub222.netlify.app",
         image: image4,
         description: "Built a responsive e-commerce website with a focus on user experience and interface.",
         technologies: ["React"],
     },
+    {
+        title: "E-Commerce Platform (Full Stack)",
+        link: "https://github.com/ahmadali3009/ecommerce-fullstack",
+        image: image4,
+        description: `Backend Development:\n
+• Built scalable REST API with Node.js/Express.js implementing MVC architecture\n
+• Designed MongoDB schemas with Mongoose for optimal data relationships\n
+• Implemented JWT authentication with Passport.js and role-based access control\n
+• Integrated Stripe payment gateway with secure payment processing\n
+• Added robust security measures including password hashing and protected routes\n
+Frontend Development:\n
+• Developed modern SPA using React 18 with custom hooks and context\n
+• Implemented state management using Redux Toolkit with async thunks\n
+• Created responsive UI with Tailwind CSS and Headless UI components\n
+• Built multi-step checkout process with React Hook Form validation\n
+Core Features:\n
+• Advanced product catalog with filtering, sorting, and search\n
+• Real-time shopping cart with persistent storage\n
+• Order management system with tracking capabilities\n
+• Admin dashboard with sales analytics and Recharts visualization\n
+• User profile management with multiple address support\n
+• Role-based access control (Admin/Customer)\n
+• Comprehensive error handling and toast notifications`,
+        technologies: [
+            "React 18",
+            "Node.js",
+            "Express.js",
+            "MongoDB",
+            "Redux Toolkit",
+            "Stripe",
+            "Tailwind CSS",
+            "JWT",
+            "Passport.js",
+            "React Hook Form",
+            "Recharts"
+        ],
+    }
 ]
 
 export const PROJECTS_AR = [
+    {
+        title: "تطبيق اكتشاف الأفلام",
+        link: "https://github.com/ahmadali3009/movie-app",
+        image: image,
+        description: `الميزات الأساسية:\n
+• اكتشاف الأفلام: الأفلام الشائعة، أفضل العروض التلفزيونية، تناوب المحتوى المميز\n
+• نظام البحث: بحث فوري عن الأفلام مع عرض النتائج\n
+• عروض تفصيلية: صفحات معلومات شاملة للأفلام/العروض التلفزيونية\n
+• مصادقة JWT: وصول آمن مع التحقق من صلاحية الرمز المميز\n
+• تصميم متجاوب: تخطيطات متوافقة مع الأجهزة المحمولة\n
+الوظائف الرئيسية:\n
+• returndata(): جلب الأفلام الشائعة من TMDB API\n
+• Fmoviesbyid(): استرجاع تفاصيل فيلم محدد\n
+• searchFetch(): معالجة استعلامات بحث المستخدم\n
+• FetchTopRated(): الحصول على محتوى تلفزيوني مصنف\n
+• jwtDecode(): التحقق من رموز المصادقة\n
+• handlepage()/handlepreviouspage(): التحكم في ترقيم الصفحات\n
+• handlesearch()/searchbuttton(): إدارة وظائف البحث\n
+مكونات واجهة المستخدم:\n
+• HeroBanner: عرض الأفلام المميزة مع التدوير التلقائي\n
+• MovieCard: عرض معلومات الفيلم في تنسيق البطاقة\n
+• Moviedetail/MovieDetail2: عرض معلومات الفيلم/التلفزيون المفصلة\n
+• حالات التحميل مع محملات هيكلية لتحسين تجربة المستخدم\n
+التنفيذ التقني:\n
+• React Query للحصول على البيانات وتخزينها مؤقتًا\n
+• React Router للتنقل السلس بين العروض\n
+• CSS متجاوب مع استعلامات الوسائط\n
+• تأثيرات بصرية حديثة تشمل الرسوم المتحركة والتدرجات\n
+• مصادقة قائمة على الرموز المميزة مع معالجة انتهاء الصلاحية`,
+        technologies: [
+            "React",
+            "React Query",
+            "React Router",
+            "JWT",
+            "TMDB API",
+            "CSS3",
+            "REST API",
+            "Authentication"
+        ],
+    },
     {
         title: "تطبيق السحابة",
         link: "https://github.com/ahmadali3009/cloud-app-note",
@@ -125,6 +242,43 @@ export const PROJECTS_AR = [
         description: "بناء موقع تجارة إلكترونية مستجيب يركز على تجربة المستخدم والواجهة.",
         technologies: ["React"],
     },
+    {
+        title: "منصة التجارة الإلكترونية (متكاملة)",
+        link: "https://github.com/ahmadali3009/ecommerce-fullstack",
+        image: image4,
+        description: `تطوير الواجهة الخلفية:\n
+• بناء واجهة برمجة تطبيقات REST قابلة للتطوير باستخدام Node.js/Express.js\n
+• تصميم مخططات MongoDB مع Mongoose للعلاقات المثلى للبيانات\n
+• تنفيذ المصادقة JWT مع Passport.js والتحكم في الوصول القائم على الأدوار\n
+• دمج بوابة الدفع Stripe مع معالجة آمنة للمدفوعات\n
+• إضافة إجراءات أمنية قوية تشمل تشفير كلمات المرور والمسارات المحمية\n
+تطوير الواجهة الأمامية:\n
+• تطوير تطبيق SPA حديث باستخدام React 18\n
+• تنفيذ إدارة الحالة باستخدام Redux Toolkit\n
+• إنشاء واجهة مستخدم متجاوبة مع Tailwind CSS\n
+• بناء عملية دفع متعددة الخطوات مع التحقق من صحة النماذج\n
+الميزات الأساسية:\n
+• كتالوج منتجات متقدم مع التصفية والفرز والبحث\n
+• سلة تسوق فورية مع تخزين دائم\n
+• نظام إدارة الطلبات مع إمكانيات التتبع\n
+• لوحة تحكم المسؤول مع تحليلات المبيعات\n
+• إدارة ملف المستخدم مع دعم العناوين المتعددة\n
+• التحكم في الوصول القائم على الأدوار\n
+• معالجة شاملة للأخطاء وإشعارات`,
+        technologies: [
+            "React 18",
+            "Node.js",
+            "Express.js",
+            "MongoDB",
+            "Redux Toolkit",
+            "Stripe",
+            "Tailwind CSS",
+            "JWT",
+            "Passport.js",
+            "React Hook Form",
+            "Recharts"
+        ],
+    }
 ]
 
 

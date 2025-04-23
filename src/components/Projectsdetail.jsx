@@ -2,81 +2,106 @@ import React from 'react';
 import { useTranslation } from 'react-i18next';
 import { PROJECTS_EN, PROJECTS_AR } from '../constants';
 import { motion } from "framer-motion";
+import { FaGithub, FaExternalLinkAlt } from 'react-icons/fa';
 
 const Projectsdetail = () => {
   const { t, i18n } = useTranslation();
   const PROJECTS = i18n.language === 'ar' ? PROJECTS_AR : PROJECTS_EN;
 
   return (
-    <div className="px-6 sm:px-6 lg:px-8">
-      <div className="bg-custom-dark-blue my-20 py-8">
-        <motion.h1 
-          whileInView={{ opacity: 1, y: 0 }}
-          initial={{ opacity: 0, y: -100 }}
-          transition={{ duration: 1.5 }} 
-          className="text-center text-3xl text-white font-extrabold"
-        >
-          {t('projects.titlePart1')}
-          <span className="text-purple-800">{t('projects.titlePart2')}</span>
-        </motion.h1>
-      </div>
+    <section className="px-4 py-16 sm:px-6 lg:px-8">
+      <motion.div 
+        initial={{ opacity: 0, y: -20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6 }}
+        className="text-center mb-16"
+      >
+        <h2 className="text-4xl font-bold">
+          <span className="text-white">{t('projects.titlePart1')}</span>
+          <span className="text-purple-600">{t('projects.titlePart2')}</span>
+        </h2>
+        <div className="mt-2 h-1 w-20 bg-purple-600 mx-auto rounded-full"></div>
+      </motion.div>
 
-      {PROJECTS.map((pro, index) => (
-        <motion.div 
-          key={index} 
-          className="mb-8 flex flex-col lg:flex-row items-center lg:items-start justify-center p-6 bg-custom-dark-blue rounded-lg shadow-lg"
-          whileHover={{ scale: 1.05 }}
-          transition={{ duration: 0.3 }}
-        >
-          <div className="w-full lg:w-1/4 flex justify-center lg:justify-start items-center mb-4 lg:mb-0">
-            <a href={pro.link} target="_blank" rel="noopener noreferrer">
-              <motion.img 
-                whileInView={{ x: 0, opacity: 1 }}
-                initial={{ x: -100, opacity: 0 }}
-                transition={{ duration: 1, delay: 0.5 }} 
-                src={pro.image} 
-                className="rounded-lg transform hover:scale-105 transition-transform duration-300"  
-                width="200" 
-                height="200" 
-                alt={pro.title}
-              />
-            </a>
-          </div>
-          <motion.div 
-            whileInView={{ x: 0, opacity: 1 }}
-            initial={{ x: 100, opacity: 0 }}
-            transition={{ duration: 1, delay: 0.5 }} 
-            className="w-full max-w-xl lg:w-3/4 text-gray-200"
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        {PROJECTS.map((project, index) => (
+          <motion.div
+            key={index}
+            initial={{ opacity: 0, y: 50 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: index * 0.1 }}
+            className="group relative bg-gradient-to-br from-gray-900 to-gray-800 rounded-xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-300"
           >
-            <h6 className="mb-2 font-semibold text-left text-xl">
-              {pro.title}
-            </h6>
-            <a href={pro.link} target="_blank" rel="noopener noreferrer">
-              <motion.button 
-                whileHover={{ scale: 1.1 }}
-                className="text-white bg-purple-700 hover:bg-purple-800 border border-purple-700 hover:border-purple-800 rounded-md px-4 py-2 m-1 transition-all"
-              >
-                {t('view')}
-              </motion.button>
-            </a>
-            <p 
-              className="text-left mt-4"
-              dangerouslySetInnerHTML={{ __html: pro.description.replace(/\n/g, '<br />') }}
-            />
-            <div className="mt-4 flex flex-wrap justify-center lg:justify-start">
-              {pro.technologies.map((tech, techIndex) => (
-                <span 
-                  key={techIndex} 
-                  className="text-white bg-purple-500 hover:bg-purple-600 border border-purple-500 hover:border-purple-600 rounded-md px-3 py-1 m-1 transition-all"
+            {/* Project Image with Overlay */}
+            <div className="relative h-48 overflow-hidden">
+              <img
+                src={project.image}
+                alt={project.title}
+                className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-gray-900 via-gray-900/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+            </div>
+
+            {/* Project Content */}
+            <div className="p-6">
+              <h3 className="text-xl font-semibold text-white mb-3 group-hover:text-purple-400 transition-colors">
+                {project.title}
+              </h3>
+
+              {/* Technologies */}
+              <div className="flex flex-wrap gap-2 mb-4">
+                {project.technologies.map((tech, techIndex) => (
+                  <span
+                    key={techIndex}
+                    className="px-3 py-1 text-xs font-medium bg-purple-900/30 text-purple-300 rounded-full"
+                  >
+                    {tech}
+                  </span>
+                ))}
+              </div>
+
+              {/* Description */}
+              <div className="text-gray-300 text-sm mb-6 line-clamp-3">
+                {project.description.split('\n').slice(0, 3).join('\n')}
+              </div>
+
+              {/* Action Buttons */}
+              <div className="flex gap-4">
+                <motion.a
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
+                  href={project.link}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center gap-2 px-4 py-2 bg-purple-600 hover:bg-purple-700 rounded-lg transition-colors"
                 >
-                  {tech}
-                </span>
-              ))}
+                  <FaGithub className="text-lg" />
+                  <span>Code</span>
+                </motion.a>
+                {project.demo && (
+                  <motion.a
+                    whileHover={{ scale: 1.05 }}
+                    whileTap={{ scale: 0.95 }}
+                    href={project.demo}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-center gap-2 px-4 py-2 border border-purple-600 hover:bg-purple-600/20 rounded-lg transition-colors"
+                  >
+                    <FaExternalLinkAlt className="text-lg" />
+                    <span>Live Demo</span>
+                  </motion.a>
+                )}
+              </div>
+            </div>
+
+            {/* Hover Effect Corner */}
+            <div className="absolute top-0 left-0 w-full h-full pointer-events-none">
+              <div className="absolute top-0 left-0 w-20 h-20 bg-gradient-to-br from-purple-600/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 transform -translate-x-full -translate-y-full group-hover:translate-x-0 group-hover:translate-y-0"></div>
             </div>
           </motion.div>
-        </motion.div>
-      ))}
-    </div>
+        ))}
+      </div>
+    </section>
   );
 }
 

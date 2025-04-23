@@ -21,3 +21,31 @@ html, body {
   max-width: 100%;
   overflow-x: hidden;
 }
+
+/* Add these to your existing CSS */
+@media (max-width: 768px) {
+  .prose {
+    font-size: 1rem;
+  }
+  
+  .stats-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Add these to your existing CSS */
+@media (max-width: 768px) {
+  .experience-timeline {
+    flex-direction: column;
+  }
+  
+  .experience-card {
+    width: 100%;
+    margin-left: 0;
+    margin-right: 0;
+  }
+}
+
+
+
+
