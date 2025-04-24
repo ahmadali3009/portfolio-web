@@ -5,7 +5,7 @@ import { motion } from "framer-motion";
 import { FaDownload } from 'react-icons/fa';
 
 const About = () => {
-  const { t, i18n } = useTranslation();
+  const { t } = useTranslation();
 
   return (
     <section className="relative py-20 overflow-hidden">
@@ -75,7 +75,7 @@ const About = () => {
             {/* Stats Section */}
             <div className="grid grid-cols-2 gap-6 mt-8">
               <div className="bg-gradient-to-br from-gray-900/80 to-gray-800/80 p-6 rounded-xl border border-purple-500/10">
-                <div className="text-3xl font-bold text-purple-400">2+</div>
+                <div className="text-3xl font-bold text-purple-400">3</div>
                 <div className="text-gray-400 mt-2">Years of Experience</div>
               </div>
               <div className="bg-gradient-to-br from-gray-900/80 to-gray-800/80 p-6 rounded-xl border border-purple-500/10">
@@ -85,14 +85,23 @@ const About = () => {
             </div>
 
             {/* Download CV Button */}
-            <motion.button
+            <motion.div
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
-              className="mt-8 px-6 py-3 bg-gradient-to-r from-purple-600 to-purple-800 rounded-xl text-white font-semibold flex items-center gap-2 hover:from-purple-700 hover:to-purple-900 transition-all duration-300 shadow-lg shadow-purple-500/25"
             >
-              <FaDownload className="text-lg" />
-              Download CV
-            </motion.button>
+              <a 
+                href="/Resume(P).pdf"
+                download
+                className="mt-8 px-6 py-3 bg-gradient-to-r from-purple-600 to-purple-800 rounded-xl text-white font-semibold flex items-center gap-2 hover:from-purple-700 hover:to-purple-900 transition-all duration-300 shadow-lg shadow-purple-500/25"
+                onClick={(e) => {
+                  // Optional: Add click tracking
+                  console.log('Download started');
+                }}
+              >
+                <FaDownload className="text-lg" />
+                Download CV
+              </a>
+            </motion.div>
           </motion.div>
         </div>
       </div>

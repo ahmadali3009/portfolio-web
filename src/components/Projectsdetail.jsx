@@ -9,14 +9,14 @@ const Projectsdetail = () => {
   const PROJECTS = i18n.language === 'ar' ? PROJECTS_AR : PROJECTS_EN;
 
   return (
-    <section className="px-4 py-16 sm:px-6 lg:px-8">
+    <section className="px-6 sm:px-8 md:px-12 lg:px-24 py-16">
       <motion.div 
         initial={{ opacity: 0, y: -20 }}
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6 }}
         className="text-center mb-16"
       >
-        <h2 className="text-4xl font-bold">
+        <h2 className="text-4xl lg:text-5xl font-bold">
           <span className="text-white">{t('projects.titlePart1')}</span>
           <span className="text-purple-600">{t('projects.titlePart2')}</span>
         </h2>
@@ -44,7 +44,7 @@ const Projectsdetail = () => {
 
             {/* Project Content */}
             <div className="p-6">
-              <h3 className="text-xl font-semibold text-white mb-3 group-hover:text-purple-400 transition-colors">
+              <h3 className="text-xl lg:text-2xl font-semibold text-white mb-3 group-hover:text-purple-400 transition-colors">
                 {project.title}
               </h3>
 
@@ -53,7 +53,7 @@ const Projectsdetail = () => {
                 {project.technologies.map((tech, techIndex) => (
                   <span
                     key={techIndex}
-                    className="px-3 py-1 text-xs font-medium bg-purple-900/30 text-purple-300 rounded-full"
+                    className="px-3 py-1 text-xs lg:text-sm font-medium bg-purple-900/30 text-purple-300 rounded-full"
                   >
                     {tech}
                   </span>
@@ -61,7 +61,7 @@ const Projectsdetail = () => {
               </div>
 
               {/* Description */}
-              <div className="text-gray-300 text-sm mb-6 line-clamp-3">
+              <div className="text-gray-300 text-sm lg:text-base mb-6 line-clamp-3">
                 {project.description.split('\n').slice(0, 3).join('\n')}
               </div>
 

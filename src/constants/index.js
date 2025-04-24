@@ -19,45 +19,68 @@ export const HOMEAR = [
 ]
 export const EXPERIENCES_EN = [
     {
+        year: "Feb 2024 to Present",
+        role: "Freelance Software Developer",
+        company: "Self-Employed",
+        description: `• Engineered a full-stack E-commerce platform with Stripe integration, admin dashboard, and real-time inventory management using React 18, Node.js, and MongoDB
+• Integrated secure payment processing with Stripe, ensuring PCI compliance and smooth checkout experience
+• Developed a movie discovery application featuring JWT authentication, real-time search, and personalized recommendations using TMDB API
+• Built a secure cloud-based note-taking solution with role-based access control and real-time collaboration features`,
+        technologies: ["React", "Node.js", "MongoDB", "Express.js", "Redux Toolkit", "TypeScript", "Tailwind CSS", "JWT", "REST APIs", "Git"],
+    },
+    {
+        year: "2023 to Feb 2024",
+        role: "Full Stack Developer",
+        company: "Bytelinx",
+        description: `During my tenure at Bytelinx, I engaged in full stack development utilizing PHP and CodeIgniter, ensuring robust and efficient solutions. I also worked extensively with the MERN stack, demonstrating my versatility in modern web technologies. Additionally, I enhanced backend functionality and performed comprehensive SEO, contributing to improved site performance and visibility.`,
+        technologies: ["Javascript", "React.js", "Expressjs", "mongoDB", "php", "nodejs"],
+    },
+    {
         year: "oct 2022 to feb 2023",
         role: "Software Developer",
         company: "Eversole",
         description: `Developed CRUD API for a desktop application using .NET framework and C#.`,
         technologies: ["C#", ".NET", "Javascript"],
     },
-    {
-        year: "2023 to Feb 2024",
-        role: "Full Stack Developer",
-        company: "Bytelinx",
-        description: `During my tenure at Bytelinx, I engaged in full stack development utilizing PHP and CodeIgniter, ensuring robust and efficient solutions. I also worked extensively with the MERN stack, demonstrating my versatility in modern web technologies. Additionally, I enhanced backend functionality and performed comprehensive SEO, contributing to improved site performance and visibility.
-`,
-        technologies: ["Javascript", "React.js", "Expressjs", "mongoDB", "php", "nodejs"],
-    },
-
 ]
+
 export const EXPERIENCES_AR = [
     {
-      year: "أكتوبر 2022 إلى فبراير 2023",
-      role: "مطور برامج",
-      company: "إيفرسول",
-      description: "تم تطوير CRUD API لتطبيق سطح المكتب باستخدام إطار عمل .NET ولغة البرمجة C#.",
-      technologies: ["C#", ".NET", "جافاسكريبت"],
+        year: "فبراير 2024 حتى الآن",
+        role: "مطور برمجيات مستقل",
+        company: "عمل حر",
+        description: `• تطوير منصة تجارة إلكترونية متكاملة مع دمج Stripe ولوحة تحكم المسؤول وإدارة المخزون في الوقت الفعلي باستخدام React 18 وNode.js وMongoDB
+• دمج معالجة مدفوعات آمنة مع Stripe وPayPal وبوابات الدفع المحلية، مع ضمان الامتثال لمعايير PCI وتجربة دفع سلسة
+• تطوير تطبيق لاكتشاف الأفلام يتميز بمصادقة JWT والبحث في الوقت الفعلي والتوصيات المخصصة باستخدام TMDB API
+• إنشاء حل آمن لتدوين الملاحظات السحابية مع التحكم في الوصول القائم على الأدوار وميزات التعاون في الوقت الفعلي`,
+        technologies: ["React", "Node.js", "MongoDB", "Express.js", "Redux Toolkit", "TypeScript", "Tailwind CSS", "JWT", "REST APIs", "Git"],
     },
     {
-      year: "2023 إلى فبراير 2024",
-      role: "مطور متكامل",
-      company: "بايتلينكس",
-      description: `خلال فترة عملي في بايتلينكس، انخرطت في تطوير الويب الكامل باستخدام PHP وCodeIgniter، مما يضمن حلول قوية وفعالة. عملت < بشكل مكثف مع MERN stack، مما يظهر تعدد مهاراتي في تقنيات الويب الحديثة. بالإضافة إلى ذلك، قمت بتحسين الوظائف الخلفية وأداء تحسين محركات البحث الشامل، مما ساهم في تحسين أداء الموقع وزيادة رؤيته.`,
-      technologies: ["جافاسكريبت", "React.js", "Expressjs", "mongoDB", "php", "nodejs"],
+        year: "2023 إلى فبراير 2024",
+        role: "مطور متكامل",
+        company: "بايتلينكس",
+        description: `خلال فترة عملي في بايتلينكس، انخرطت في تطوير الويب الكامل باستخدام PHP وCodeIgniter، مما يضمن حلول قوية وفعالة. عملت بشكل مكثف مع MERN stack، مما يظهر تعدد مهاراتي في تقنيات الويب الحديثة. بالإضافة إلى ذلك، قمت بتحسين الوظائف الخلفية وأداء تحسين محركات البحث الشامل، مما ساهم في تحسين أداء الموقع وزيادة رؤيته.`,
+        technologies: ["جافاسكريبت", "React.js", "Expressjs", "mongoDB", "php", "nodejs"],
     },
-  ];
-  
+    {
+        year: "أكتوبر 2022 إلى فبراير 2023",
+        role: "مطور برامج",
+        company: "إيفرسول",
+        description: "تم تطوير CRUD API لتطبيق سطح المكتب باستخدام إطار عمل .NET ولغة البرمجة C#.",
+        technologies: ["C#", ".NET", "جافاسكريبت"],
+    },
+]
+
+
 
 export const PROJECTS_EN = [
+
     {
         title: "Movie Discovery Application",
+
         link: "https://github.com/ahmadali3009/movie-app",
         image: image, // You'll need to import the appropriate image
+
         description: `Core Features:\n
 • Movie Discovery: Popular movies, top-rated TV shows, featured content rotation\n
 • Search System: Real-time movie search with results display\n

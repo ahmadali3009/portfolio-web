@@ -16,7 +16,7 @@ const Home = () => {
       {/* Background Gradient */}
       <div className="absolute top-0 left-0 right-0 bottom-0 bg-[radial-gradient(ellipse_at_top_left,_var(--tw-gradient-stops))] from-purple-900/20 via-transparent to-transparent"></div>
 
-      <div className="container mx-auto px-4 pt-32 pb-12 sm:pt-40 sm:pb-20">
+      <div className="container mx-auto px-6 sm:px-8 md:px-12 lg:px-24 pt-32 pb-12 sm:pt-40 sm:pb-20">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           {/* Left Column - Text Content */}
           <motion.div
@@ -31,7 +31,7 @@ const Home = () => {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: 0.2 }}
-                className="text-5xl sm:text-6xl font-bold text-white"
+                className="text-5xl sm:text-6xl lg:text-7xl font-bold text-white"
               >
                 {homeContent.greeting}
               </motion.h1>
@@ -39,7 +39,7 @@ const Home = () => {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: 0.3 }}
-                className="text-2xl sm:text-3xl font-medium"
+                className="text-2xl sm:text-3xl lg:text-4xl font-medium"
               >
                 <span className="bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent">
                   {homeContent.title}
@@ -52,7 +52,7 @@ const Home = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.4 }}
-              className="text-gray-300 text-lg max-w-xl leading-relaxed"
+              className="text-base sm:text-lg lg:text-xl text-gray-300 max-w-2xl"
             >
               {homeContent.description}
             </motion.p>
@@ -65,33 +65,35 @@ const Home = () => {
               className="flex flex-wrap gap-4"
             >
               {/* Resume Button */}
-              <motion.button
+              <motion.a
+                href="/Resume(P).pdf"
+                download
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
-                className="px-6 py-3 bg-gradient-to-r from-purple-600 to-pink-600 rounded-lg text-white font-medium flex items-center gap-2 hover:opacity-90 transition-opacity"
+                className="z-10 inline-flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-purple-600 to-pink-600 rounded-lg text-white font-medium hover:opacity-90 transition-opacity cursor-pointer"
               >
                 <HiDownload className="text-xl" />
                 Download CV
-              </motion.button>
+              </motion.a>
 
               {/* Social Links */}
               <motion.a
-                href="https://github.com/yourusername"
+                href="https://github.com/ahmadali3009"
                 target="_blank"
                 rel="noopener noreferrer"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
-                className="p-3 bg-white/10 rounded-lg text-white hover:bg-white/20 transition-colors"
+                className="z-10 p-3 bg-white/10 rounded-lg text-white hover:bg-white/20 transition-colors"
               >
                 <FaGithub size={24} />
               </motion.a>
               <motion.a
-                href="https://linkedin.com/in/yourusername"
+                href="https://www.linkedin.com/in/ahmed-ali-b290b7249/"
                 target="_blank"
                 rel="noopener noreferrer"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
-                className="p-3 bg-white/10 rounded-lg text-white hover:bg-white/20 transition-colors"
+                className="z-10 p-3 bg-white/10 rounded-lg text-white hover:bg-white/20 transition-colors"
               >
                 <FaLinkedin size={24} />
               </motion.a>
@@ -105,20 +107,20 @@ const Home = () => {
               className="grid grid-cols-2 sm:grid-cols-4 gap-4 pt-8"
             >
               <div className="bg-white/5 p-4 rounded-lg backdrop-blur-sm">
-                <div className="text-3xl font-bold text-purple-400">2+</div>
-                <div className="text-gray-400">Years Experience</div>
+                <div className="text-3xl lg:text-4xl font-bold text-purple-400">3</div>
+                <div className="text-gray-400 text-sm lg:text-base">Years Experience</div>
               </div>
               <div className="bg-white/5 p-4 rounded-lg backdrop-blur-sm">
-                <div className="text-3xl font-bold text-purple-400">20+</div>
-                <div className="text-gray-400">Total Projects</div>
+                <div className="text-3xl lg:text-4xl font-bold text-purple-400">20+</div>
+                <div className="text-gray-400 text-sm lg:text-base">Total Projects</div>
               </div>
               <div className="bg-white/5 p-4 rounded-lg backdrop-blur-sm">
-                <div className="text-3xl font-bold text-purple-400">6</div>
-                <div className="text-gray-400">Featured Projects</div>
+                <div className="text-3xl lg:text-4xl font-bold text-purple-400">6</div>
+                <div className="text-gray-400 text-sm lg:text-base">Featured Projects</div>
               </div>
               <div className="bg-white/5 p-4 rounded-lg backdrop-blur-sm">
-                <div className="text-3xl font-bold text-purple-400">10+</div>
-                <div className="text-gray-400">Technologies</div>
+                <div className="text-3xl lg:text-4xl font-bold text-purple-400">10+</div>
+                <div className="text-gray-400 text-sm lg:text-base">Technologies</div>
               </div>
             </motion.div>
           </motion.div>

@@ -8,12 +8,8 @@
   /* font-weight: 400; */
   background-color: rgb(9, 0, 26)
 }
-
 html, body {
   max-width: 100%;
-  overflow-x: hidden;
-}
-* {
   box-sizing: border-box;
 }
 
@@ -23,29 +19,23 @@ html, body {
 }
 
 /* Add these to your existing CSS */
-@media (max-width: 768px) {
-  .prose {
-    font-size: 1rem;
-  }
-  
-  .stats-grid {
-    grid-template-columns: 1fr;
-  }
+
+/* Add custom scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
 }
 
-/* Add these to your existing CSS */
-@media (max-width: 768px) {
-  .experience-timeline {
-    flex-direction: column;
-  }
-  
-  .experience-card {
-    width: 100%;
-    margin-left: 0;
-    margin-right: 0;
-  }
+::-webkit-scrollbar-track {
+  background: #1a1a1a;
 }
 
+::-webkit-scrollbar-thumb {
+  background: #4c1d95;
+  border-radius: 5px;
+}
 
+::-webkit-scrollbar-thumb:hover {
+  background: #5b21b6;
+}
 
 
