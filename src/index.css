@@ -4,18 +4,36 @@
 
 :root {
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
-  /* line-height: 1.5; */
-  /* font-weight: 400; */
-  background-color: rgb(9, 0, 26)
+  background-color: rgb(9, 0, 26);
 }
+
+html {
+  font-size: 95%; /* Slightly reduce base font size */
+}
+
+/* Specific scaling for larger screens */
+@media screen and (min-width: 1024px) {
+  html {
+    font-size: 85%; /* Further reduce for desktop/laptop */
+  }
+}
+
+/* Extra large screens */
+@media screen and (min-width: 1536px) {
+  html {
+    font-size: 80%; /* Even smaller for very large screens */
+  }
+}
+
 html, body {
   max-width: 100%;
   box-sizing: border-box;
+  overflow-x: hidden;
 }
 
 .container {
   max-width: 100%;
-  overflow-x: hidden;
+  overflow: hidden;
 }
 
 /* Add these to your existing CSS */
@@ -37,5 +55,9 @@ html, body {
 ::-webkit-scrollbar-thumb:hover {
   background: #5b21b6;
 }
+
+
+
+
 
 

@@ -12,11 +12,11 @@ const Home = () => {
   const homeContent = i18n.language === 'ar' ? HOMEAR[0] : HOMEEN[0];
 
   return (
-    <section className="relative">
+    <section className="relative overflow-hidden">
       {/* Background Gradient */}
       <div className="absolute top-0 left-0 right-0 bottom-0 bg-[radial-gradient(ellipse_at_top_left,_var(--tw-gradient-stops))] from-purple-900/20 via-transparent to-transparent"></div>
 
-      <div className="container mx-auto px-6 sm:px-8 md:px-12 lg:px-24 pt-32 pb-12 sm:pt-40 sm:pb-20">
+      <div className="container mx-auto px-6 sm:px-8 md:px-12 lg:px-24 pt-32 pb-12 sm:pt-40 sm:pb-20 overflow-hidden">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           {/* Left Column - Text Content */}
           <motion.div

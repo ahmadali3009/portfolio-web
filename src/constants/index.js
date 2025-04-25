@@ -2,6 +2,9 @@ import image from "../assets/pro11.png"
 import image2 from "../assets/pro22.png"
 import image3 from "../assets/pro3.png"
 import image4 from "../assets/pro4.png"
+import image5 from "../assets/movieappss.png"
+import image6 from "../assets/ecomappss.png"
+
 
 export const HOMEEN = [
     {
@@ -79,7 +82,7 @@ export const PROJECTS_EN = [
         title: "Movie Discovery Application",
 
         link: "https://github.com/ahmadali3009/movie-app",
-        image: image, // You'll need to import the appropriate image
+        image: image5, // You'll need to import the appropriate image
 
         description: `Core Features:\n
 • Movie Discovery: Popular movies, top-rated TV shows, featured content rotation\n
@@ -160,7 +163,7 @@ Technical Implementation:\n
     {
         title: "E-Commerce Platform (Full Stack)",
         link: "https://github.com/ahmadali3009/ecommerce-fullstack",
-        image: image4,
+        image: image6,
         description: `Backend Development:\n
 • Built scalable REST API with Node.js/Express.js implementing MVC architecture\n
 • Designed MongoDB schemas with Mongoose for optimal data relationships\n
@@ -200,7 +203,7 @@ export const PROJECTS_AR = [
     {
         title: "تطبيق اكتشاف الأفلام",
         link: "https://github.com/ahmadali3009/movie-app",
-        image: image,
+        image: image5,
         description: `الميزات الأساسية:\n
 • اكتشاف الأفلام: الأفلام الشائعة، أفضل العروض التلفزيونية، تناوب المحتوى المميز\n
 • نظام البحث: بحث فوري عن الأفلام مع عرض النتائج\n
@@ -268,7 +271,7 @@ export const PROJECTS_AR = [
     {
         title: "منصة التجارة الإلكترونية (متكاملة)",
         link: "https://github.com/ahmadali3009/ecommerce-fullstack",
-        image: image4,
+        image: image6,
         description: `تطوير الواجهة الخلفية:\n
 • بناء واجهة برمجة تطبيقات REST قابلة للتطوير باستخدام Node.js/Express.js\n
 • تصميم مخططات MongoDB مع Mongoose للعلاقات المثلى للبيانات\n
