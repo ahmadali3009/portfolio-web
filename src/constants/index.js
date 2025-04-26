@@ -77,19 +77,16 @@ export const EXPERIENCES_AR = [
 
 
 export const PROJECTS_EN = [
-
     {
-        title: "Movie Discovery Application",
-
-        link: "https://github.com/ahmadali3009/movie-app",
-        image: image5, // You'll need to import the appropriate image
-
+        title: "Movie Discovery App",
+        link: "https://github.com/ahmadali3009/movieapp",
+        image: image5,
         description: `Core Features:\n
-• Movie Discovery: Popular movies, top-rated TV shows, featured content rotation\n
-• Search System: Real-time movie search with results display\n
-• Detailed Views: Comprehensive movie/TV show information pages\n
-• JWT Authentication: Secure access with token validation & expiration handling\n
-• Responsive Design: Mobile-friendly layouts adapting to all screen sizes\n
+• Movie Discovery: Popular movies, top TV shows, featured content rotation\n
+• Search System: Instant movie search with results display\n
+• Detailed Views: Comprehensive movie/TV show info pages\n
+• JWT Authentication: Secure access with token validation\n
+• Responsive Design: Mobile-compatible layouts\n
 Main Functions:\n
 • returndata(): Fetches popular movies from TMDB API\n
 • Fmoviesbyid(): Retrieves specific movie details by ID\n
@@ -122,7 +119,8 @@ Technical Implementation:\n
     },
     {   
         title: "Cloud Note",
-        link: "https://cloud-note-frontend.onrender.com",
+        link: "https://github.com/ahmadali3009/cloud-app-note",
+        demo: "https://cloud-note-frontend.onrender.com",
         image: image,
         description: `• Utilized the MERN stack (MongoDB, ExpressJS, ReactJS, Node.js) for full-stack development\n
 • Implemented JWT-based authentication for secure user sessions.\n
@@ -155,14 +153,15 @@ Technical Implementation:\n
     },
     {
         title: "Ecommerce site(static site)",
-        link: "https://jovialhub222.netlify.app",
+        link: "https://github.com/ahmadali3009/ecom-react",
+        demo: "https://jovialhub222.netlify.app",
         image: image4,
         description: "Built a responsive e-commerce website with a focus on user experience and interface.",
         technologies: ["React"],
     },
     {
         title: "E-Commerce Platform (Full Stack)",
-        link: "https://github.com/ahmadali3009/ecommerce-fullstack",
+        link: "https://github.com/ahmadali3009/Ecommerce-fullS",
         image: image6,
         description: `Backend Development:\n
 • Built scalable REST API with Node.js/Express.js implementing MVC architecture\n
@@ -202,7 +201,7 @@ Core Features:\n
 export const PROJECTS_AR = [
     {
         title: "تطبيق اكتشاف الأفلام",
-        link: "https://github.com/ahmadali3009/movie-app",
+        link: "https://github.com/ahmadali3009/movieapp",
         image: image5,
         description: `الميزات الأساسية:\n
 • اكتشاف الأفلام: الأفلام الشائعة، أفضل العروض التلفزيونية، تناوب المحتوى المميز\n
@@ -243,6 +242,7 @@ export const PROJECTS_AR = [
     {
         title: "تطبيق السحابة",
         link: "https://github.com/ahmadali3009/cloud-app-note",
+        demo: "https://cloud-note-frontend.onrender.com",
         image: image,
         description: "بناء تطبيق لتدوين الملاحظات يعتمد على السحابة مع مصادقة آمنة.",
         technologies: ["React", "Node.js", "MongoDB", "Expressjs", "JWT"],
@@ -263,14 +263,15 @@ export const PROJECTS_AR = [
     },
     {
         title: "موقع التجارة الإلكترونية",
-        link: "https://jovialhub222.netlify.app",
+        link: "https://github.com/ahmadali3009/ecom-react",
+        demo: "https://jovialhub222.netlify.app",
         image: image4,
         description: "بناء موقع تجارة إلكترونية مستجيب يركز على تجربة المستخدم والواجهة.",
         technologies: ["React"],
     },
     {
         title: "منصة التجارة الإلكترونية (متكاملة)",
-        link: "https://github.com/ahmadali3009/ecommerce-fullstack",
+        link: "https://github.com/ahmadali3009/Ecommerce-fullS",
         image: image6,
         description: `تطوير الواجهة الخلفية:\n
 • بناء واجهة برمجة تطبيقات REST قابلة للتطوير باستخدام Node.js/Express.js\n

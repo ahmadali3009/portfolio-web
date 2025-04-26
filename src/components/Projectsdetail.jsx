@@ -78,6 +78,19 @@ const Projectsdetail = () => {
                   <FaGithub className="text-lg" />
                   <span>Code</span>
                 </motion.a>
+                {project.view && (
+                  <motion.a
+                    whileHover={{ scale: 1.05 }}
+                    whileTap={{ scale: 0.95 }}
+                    href={project.view}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-center gap-2 px-4 py-2 bg-purple-600/20 hover:bg-purple-600/40 rounded-lg transition-colors"
+                  >
+                    <FaExternalLinkAlt className="text-lg" />
+                    <span>View</span>
+                  </motion.a>
+                )}
                 {project.demo && (
                   <motion.a
                     whileHover={{ scale: 1.05 }}
