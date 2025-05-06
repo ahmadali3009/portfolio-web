@@ -1,0 +1,9 @@
+{
+  "common": {
+    "backToHome": "Back to Home"
+  },
+  "projects": {
+    "overview": "Project Overview",
+    "details": "Details"
+  }
+}

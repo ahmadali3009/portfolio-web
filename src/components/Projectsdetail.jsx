@@ -2,7 +2,8 @@ import React from 'react';
 import { useTranslation } from 'react-i18next';
 import { PROJECTS_EN, PROJECTS_AR } from '../constants';
 import { motion } from "framer-motion";
-import { FaGithub, FaExternalLinkAlt } from 'react-icons/fa';
+import { FaGithub, FaExternalLinkAlt, FaInfoCircle } from 'react-icons/fa';
+import { Link } from 'react-router-dom';
 
 const Projectsdetail = () => {
   const { t, i18n } = useTranslation();
@@ -50,7 +51,7 @@ const Projectsdetail = () => {
 
               {/* Technologies */}
               <div className="flex flex-wrap gap-2 mb-4">
-                {project.technologies.map((tech, techIndex) => (
+                {project.technologies.slice(0, 3).map((tech, techIndex) => (
                   <span
                     key={techIndex}
                     className="px-3 py-1 text-xs lg:text-sm font-medium bg-purple-900/30 text-purple-300 rounded-full"
@@ -58,6 +59,11 @@ const Projectsdetail = () => {
                     {tech}
                   </span>
                 ))}
+                {project.technologies.length > 3 && (
+                  <span className="px-3 py-1 text-xs lg:text-sm font-medium bg-purple-900/30 text-purple-300 rounded-full">
+                    +{project.technologies.length - 3}
+                  </span>
+                )}
               </div>
 
               {/* Description */}
@@ -78,19 +84,16 @@ const Projectsdetail = () => {
                   <FaGithub className="text-lg" />
                   <span>Code</span>
                 </motion.a>
-                {project.view && (
-                  <motion.a
-                    whileHover={{ scale: 1.05 }}
-                    whileTap={{ scale: 0.95 }}
-                    href={project.view}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="flex items-center gap-2 px-4 py-2 bg-purple-600/20 hover:bg-purple-600/40 rounded-lg transition-colors"
-                  >
-                    <FaExternalLinkAlt className="text-lg" />
-                    <span>View</span>
-                  </motion.a>
-                )}
+                
+                {/* New Details Button */}
+                <Link
+                  to={`/projects/${index}`}
+                  className="flex items-center gap-2 px-4 py-2 bg-purple-600/20 hover:bg-purple-600/40 rounded-lg transition-colors"
+                >
+                  <FaInfoCircle className="text-lg" />
+                  <span>Details</span>
+                </Link>
+                
                 {project.demo && (
                   <motion.a
                     whileHover={{ scale: 1.05 }}
@@ -101,7 +104,7 @@ const Projectsdetail = () => {
                     className="flex items-center gap-2 px-4 py-2 border border-purple-600 hover:bg-purple-600/20 rounded-lg transition-colors"
                   >
                     <FaExternalLinkAlt className="text-lg" />
-                    <span>Live Demo</span>
+                    <span>Live</span>
                   </motion.a>
                 )}
               </div>
