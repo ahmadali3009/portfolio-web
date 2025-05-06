@@ -80,6 +80,7 @@ export const PROJECTS_EN = [
     {
         title: "Movie Discovery App",
         link: "https://github.com/ahmadali3009/movieapp",
+        demo: "https://movieapp-1-9vz5.onrender.com",
         image: image5,
         description: `Core Features:\n
 • Movie Discovery: Popular movies, top TV shows, featured content rotation\n
@@ -202,6 +203,7 @@ export const PROJECTS_AR = [
     {
         title: "تطبيق اكتشاف الأفلام",
         link: "https://github.com/ahmadali3009/movieapp",
+        demo: "https://movieapp-1-9vz5.onrender.com",
         image: image5,
         description: `الميزات الأساسية:\n
 • اكتشاف الأفلام: الأفلام الشائعة، أفضل العروض التلفزيونية، تناوب المحتوى المميز\n
