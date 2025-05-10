@@ -66,7 +66,7 @@ const Home = () => {
             >
               {/* Resume Button */}
               <motion.a
-                href="/Resume(P).pdf"
+                href="/Resume.pdf"
                 download
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}

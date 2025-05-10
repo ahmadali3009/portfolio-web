@@ -90,7 +90,7 @@ const About = () => {
               whileTap={{ scale: 0.95 }}
             >
               <a 
-                href="/Resume(P).pdf"
+                href="/Resume.pdf"
                 download
                 className="mt-8 px-6 py-3 bg-gradient-to-r from-purple-600 to-purple-800 rounded-xl text-white font-semibold flex items-center gap-2 hover:from-purple-700 hover:to-purple-900 transition-all duration-300 shadow-lg shadow-purple-500/25"
                 onClick={(e) => {
