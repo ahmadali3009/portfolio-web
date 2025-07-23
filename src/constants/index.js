@@ -25,7 +25,19 @@ export const EXPERIENCES_EN = [
         year: "Feb 2024 to Present",
         role: "Freelance Software Developer",
         company: "Self-Employed",
-        description: `• Engineered a full-stack E-commerce platform with Stripe integration, admin dashboard, and real-time inventory management using React 18, Node.js, and MongoDB
+        description: `
+        Montiyago (KSA-based E-commerce) | Jul 2024 – Dec 2024
+
+• Customized and enhanced a Salla-based e-commerce storefront for a Saudi client, improving UI responsiveness and layout with JavaScript and CSS.
+ 
+• Successfully delivered a production-ready website through close client collaboration.
+
+Other Projects:
+
+• Optimized React/Node performance by 40% through code-splitting, reducing hosting costs.
+• Deployed 5+ applications on cloud platforms (Render/Netlify) using Docker containers.
+• Developed secure JWT role-based authentication systems, reducing potential breaches by 90%
+• Engineered a full-stack E-commerce platform with Stripe integration, admin dashboard, and real-time inventory management using React 18, Node.js, and MongoDB
 • Integrated secure payment processing with Stripe, ensuring PCI compliance and smooth checkout experience
 • Developed a movie discovery application featuring JWT authentication, real-time search, and personalized recommendations using TMDB API
 • Built a secure cloud-based note-taking solution with role-based access control and real-time collaboration features`,
@@ -35,7 +47,12 @@ export const EXPERIENCES_EN = [
         year: "2023 to Feb 2024",
         role: "Full Stack Developer",
         company: "Bytelinx",
-        description: `During my tenure at Bytelinx, I engaged in full stack development utilizing PHP and CodeIgniter, ensuring robust and efficient solutions. I also worked extensively with the MERN stack, demonstrating my versatility in modern web technologies. Additionally, I enhanced backend functionality and performed comprehensive SEO, contributing to improved site performance and visibility.`,
+        description: `
+        Developed and optimized full-stack solutions across both backend (using PHP) and frontend (utilizing the MERN stack), which resulted in a 20% improvement in overall site performance and user responsiveness. 
+
+Implemented targeted SEO strategies, including CSS file minification, optimized H-tag hierarchy, and meta description/robots.txt configurations, which boosted organic traffic by 25%.
+
+Built a robust admin dashboard with granular role-based access control (RBAC), defining specific permissions for different user types to enhance system security and data integrity`,
         technologies: ["Javascript", "React.js", "Expressjs", "mongoDB", "php", "nodejs"],
     },
     {
@@ -52,10 +69,25 @@ export const EXPERIENCES_AR = [
         year: "فبراير 2024 حتى الآن",
         role: "مطور برمجيات مستقل",
         company: "عمل حر",
-        description: `• تطوير منصة تجارة إلكترونية متكاملة مع دمج Stripe ولوحة تحكم المسؤول وإدارة المخزون في الوقت الفعلي باستخدام React 18 وNode.js وMongoDB
-• دمج معالجة مدفوعات آمنة مع Stripe وPayPal وبوابات الدفع المحلية، مع ضمان الامتثال لمعايير PCI وتجربة دفع سلسة
-• تطوير تطبيق لاكتشاف الأفلام يتميز بمصادقة JWT والبحث في الوقت الفعلي والتوصيات المخصصة باستخدام TMDB API
-• إنشاء حل آمن لتدوين الملاحظات السحابية مع التحكم في الوصول القائم على الأدوار وميزات التعاون في الوقت الفعلي`,
+        description: `مونتياغو (منصة تجارة إلكترونية مقرها السعودية) | يوليو 2024 – ديسمبر 2024
+قمت بتخصيص وتحسين واجهة متجر إلكتروني مبني على منصة سلة لعميل سعودي، مما حسّن من استجابة التصميم وتنسيقه باستخدام JavaScript وCSS.
+
+سلّمت موقعاً إلكترونياً جاهزاً للإطلاق بعد تعاون وثيق مع العميل.
+
+مشاريع أخرى:
+حسّنت أداء تطبيقات React/Node بنسبة 40% من خلال تقنية تقسيم الكود (code-splitting)، مما أدى إلى تقليل تكاليف الاستضافة.
+
+نشرت أكثر من 5 تطبيقات على منصات سحابية (Render/Netlify) باستخدام حاويات Docker.
+
+طورت أنظمة مصادقة آمنة تعتمد على JWT وتتحكم في الأدوار (Role-Based Authentication)، مما قلل من احتمالات الاختراق بنسبة 90%.
+
+أنشأت منصة تجارة إلكترونية متكاملة باستخدام React 18 وNode.js وMongoDB، تضمنت لوحة تحكم إدارية وإدارة المخزون في الوقت الفعلي.
+
+دمجت بوابة دفع آمنة باستخدام Stripe بما يضمن التوافق مع معايير PCI وتوفير تجربة دفع سلسة.
+
+طورت تطبيق اكتشاف أفلام يحتوي على تسجيل دخول باستخدام JWT، وبحث لحظي، وتوصيات مخصصة باستخدام TMDB API.
+
+أنشأت تطبيقاً آمناً لتدوين الملاحظات على السحابة مع نظام تحكم في الصلاحيات ودعم التعاون في الوقت الحقيقي.`,
         technologies: ["React", "Node.js", "MongoDB", "Express.js", "Redux Toolkit", "TypeScript", "Tailwind CSS", "JWT", "REST APIs", "Git"],
     },
     {
