@@ -25,42 +25,62 @@ export const EXPERIENCES_EN = [
         year: "Feb 2024 to Present",
         role: "Freelance Software Developer",
         company: "Self-Employed",
-        description: `
-        Montiyago (KSA-based E-commerce) | Jul 2024 – Dec 2024
-
-• Customized and enhanced a Salla-based e-commerce storefront for a Saudi client, improving UI responsiveness and layout with JavaScript and CSS.
- 
-• Successfully delivered a production-ready website through close client collaboration.
-
-Other Projects:
-
-• Optimized React/Node performance by 40% through code-splitting, reducing hosting costs.
-• Deployed 5+ applications on cloud platforms (Render/Netlify) using Docker containers.
-• Developed secure JWT role-based authentication systems, reducing potential breaches by 90%
-• Engineered a full-stack E-commerce platform with Stripe integration, admin dashboard, and real-time inventory management using React 18, Node.js, and MongoDB
-• Integrated secure payment processing with Stripe, ensuring PCI compliance and smooth checkout experience
-• Developed a movie discovery application featuring JWT authentication, real-time search, and personalized recommendations using TMDB API
-• Built a secure cloud-based note-taking solution with role-based access control and real-time collaboration features`,
+        summary: "Delivering full-stack solutions for clients and personal products with an emphasis on performance, security, and delightful user experiences.",
+        primaryClient: {
+            title: "Montiyago · KSA-based E-commerce",
+            timeframe: "Jul 2024 – Dec 2024",
+            highlights: [
+                "Customized and elevated a Salla storefront for a Saudi retailer, improving responsiveness, layout hierarchy, and conversion-focused UX.",
+                "Collaborated closely with stakeholders to launch a production-ready experience on schedule."
+            ]
+        },
+        otherProjects: {
+            title: "Other Projects",
+            highlights: [
+                "Optimized React/Node workloads by 40% via code-splitting and smart caching, cutting hosting costs.",
+                "Deployed 5+ applications to Render and Netlify with Docker-based workflows.",
+                "Implemented secure JWT role-based authentication patterns that reduced vulnerability exposure by 90%.",
+                "Engineered a full-stack commerce platform with Stripe billing, admin analytics, and real-time inventory syncing.",
+                "Built a movie discovery experience featuring JWT auth, real-time search, and personalized TMDB-powered recommendations.",
+                "Delivered a collaborative cloud note-taking app with granular access controls and live editing."
+            ]
+        },
         technologies: ["React", "Node.js", "MongoDB", "Express.js", "Redux Toolkit", "TypeScript", "Tailwind CSS", "JWT", "REST APIs", "Git"],
     },
     {
         year: "2023 to Feb 2024",
         role: "Full Stack Developer",
         company: "Bytelinx",
-        description: `
-        Developed and optimized full-stack solutions across both backend (using PHP) and frontend (utilizing the MERN stack), which resulted in a 20% improvement in overall site performance and user responsiveness. 
-
-Implemented targeted SEO strategies, including CSS file minification, optimized H-tag hierarchy, and meta description/robots.txt configurations, which boosted organic traffic by 25%.
-
-Built a robust admin dashboard with granular role-based access control (RBAC), defining specific permissions for different user types to enhance system security and data integrity`,
-        technologies: ["Javascript", "React.js", "Expressjs", "mongoDB", "php", "nodejs"],
+        summary: "Led cross-functional initiatives to modernize legacy stacks, streamline operations, and uplift the overall user experience for high-traffic web products.",
+        primaryClient: {
+            label: "Core Momentum",
+            highlights: [
+                "Delivered full-stack solutions across PHP, CodeIgniter, and MERN ecosystems, unlocking a 20% boost in performance and responsiveness.",
+                "Re-architected backend services to stabilize deployments while improving developer velocity."
+            ]
+        },
+        otherProjects: {
+            label: "Growth Wins",
+            highlights: [
+                "Launched SEO optimizations—CSS minification, semantic heading structure, and metadata tuning—that lifted organic traffic by 25%.",
+                "Built an admin dashboard with granular RBAC policies to safeguard data and streamline operational workflows."
+            ]
+        },
+        technologies: ["JavaScript", "React.js", "Express.js", "MongoDB", "PHP", "Node.js"],
     },
     {
         year: "oct 2022 to feb 2023",
         role: "Software Developer",
         company: "Eversole",
-        description: `Developed CRUD API for a desktop application using .NET framework and C#.`,
-        technologies: ["C#", ".NET", "Javascript"],
+        summary: "Supported a desktop modernization effort by delivering resilient services and deployment automation.",
+        primaryClient: {
+            label: "Key Deliverables",
+            highlights: [
+                "Designed and shipped CRUD APIs with .NET and C# to power new desktop capabilities.",
+                "Automated deployment workflows to reduce release friction and improve reliability."
+            ]
+        },
+        technologies: ["C#", ".NET", "JavaScript"],
     },
 ]
 

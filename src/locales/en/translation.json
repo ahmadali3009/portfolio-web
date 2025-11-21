@@ -5,5 +5,36 @@
   "projects": {
     "overview": "Project Overview",
     "details": "Details"
+  },
+  "experiences": {
+    "badge": "Career Journey",
+    "title": "Experience",
+    "subtitle": "Timeline",
+    "lead": "From early beginnings to recent milestones, here is the timeline of building products, teams, and polished experiences.",
+    "labels": {
+      "client": "Client Engagement",
+      "other": "Other Projects"
+    }
+  },
+  "technologies": {
+    "badge": "Core Stack",
+    "titlePart1": "Designing",
+    "titlePart2": " with Code",
+    "lead": "The frameworks, runtimes, and delivery tools that power polished interfaces, scalable APIs, and reliable releases.",
+    "labels": {
+      "mastery": "Core",
+      "focus": "Focus",
+      "impact": "Impact"
+    },
+    "categories": {
+      "frontend": "Frontend Craft",
+      "backend": "Backend & APIs",
+      "tooling": "Tooling & Ops"
+    },
+    "descriptions": {
+      "frontend": "Interfaces, design systems, and frictionless user journeys.",
+      "backend": "API design, data workflows, and secure business logic.",
+      "tooling": "Automation, collaboration, and deployment confidence."
+    }
   }
 }
