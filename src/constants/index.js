@@ -364,14 +364,14 @@ export const PROJECTS_AR = [
 
 
 export const CONTACT_EN = {
-    address : "Al-Taif hayi nahab",
+    address : "Riyadh, Saudi Arabia",
     phone : "0574995058",
     email : "abutt3009@gmail.com"
 }
 
 
     export const CONTACT_AR = {
-      address: "الطائف حي نهاب",
+      address: "الرياض، المملكة العربية السعودية",
       phone: "0574995058",
       email: "abutt3009@gmail.com"
     }
