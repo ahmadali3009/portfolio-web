@@ -1,128 +1,138 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
 import { motion } from 'framer-motion';
-import { 
-  FaReact, FaNodeJs, FaGitAlt, FaDocker,
-  FaHtml5, FaCss3Alt, FaPhp
-} from 'react-icons/fa';
-import { 
-  SiJavascript, SiTypescript, SiMongodb, 
-  SiExpress, SiRedux, SiTailwindcss, 
-  SiCodeigniter, SiPassport
-} from 'react-icons/si';
+import { FaReact, FaNodeJs, FaCloud, FaBrain } from 'react-icons/fa';
 import { TbBrandNextjs } from 'react-icons/tb';
 
-const Technologies = () => {
-  const { t, i18n } = useTranslation();
+const categoryIconClasses =
+  'flex h-10 w-10 items-center justify-center rounded-2xl bg-white/10 text-lg text-purple-200 shadow-[0_18px_40px_-22px_rgba(129,140,248,0.9)]';
 
-  const technologies = [
+const Technologies = () => {
+  const { t } = useTranslation();
+
+  const categories = [
     {
-      category: "Frontend",
-      techs: [
-        { name: "React.js", icon: <FaReact className="text-[#61DAFB]" /> },
-        { name: "Redux", icon: <SiRedux className="text-[#764ABC]" /> },
-        { name: "Next.js", icon: <TbBrandNextjs className="text-white" /> },
-        { name: "JavaScript", icon: <SiJavascript className="text-[#F7DF1E]" /> },
-        { name: "TypeScript", icon: <SiTypescript className="text-[#3178C6]" /> },
-        { name: "HTML5", icon: <FaHtml5 className="text-[#E34F26]" /> },
-        { name: "CSS3", icon: <FaCss3Alt className="text-[#1572B6]" /> },
-        { name: "Tailwind CSS", icon: <SiTailwindcss className="text-[#06B6D4]" /> },
-      ]
+      title: 'Frontend',
+      icon: <FaReact className="text-cyan-300" />,
+      description: 'Modern React/Next.js frontends with design systems and performance in mind.',
+      chips: ['React 18', 'Next.js', 'TypeScript', 'Redux Toolkit', 'Tailwind CSS', 'shadcn/ui', 'React Router'],
     },
     {
-      category: "Backend",
-      techs: [
-        { name: "Node.js", icon: <FaNodeJs className="text-[#339933]" /> },
-        { name: "Express.js", icon: <SiExpress className="text-white" /> },
-        { name: "PHP", icon: <FaPhp className="text-[#777BB4]" /> },
-        { name: "CodeIgniter", icon: <SiCodeigniter className="text-[#EF4223]" /> },
-        { name: "MongoDB", icon: <SiMongodb className="text-[#47A248]" /> },
-        { name: "Passport.js", icon: <SiPassport className="text-white" /> },
-      ]
+      title: 'Backend & APIs',
+      icon: <FaNodeJs className="text-emerald-300" />,
+      description: 'Scalable APIs and services for multi-tenant SaaS and real-time systems.',
+      chips: [
+        'Node.js',
+        'Fastify',
+        'Express.js',
+        'MongoDB',
+        'PostgreSQL · Prisma',
+        'Redis · BullMQ',
+        'JWT / OAuth2',
+        'Stripe',
+        'WebSockets · Socket.IO',
+      ],
     },
     {
-      category: "Tools",
-      techs: [
-        { name: "Git", icon: <FaGitAlt className="text-[#F05032]" /> },
-        { name: "Docker", icon: <FaDocker className="text-[#2496ED]" /> },
-      ]
-    }
+      title: 'AI / RAG & Data',
+      icon: <FaBrain className="text-purple-300" />,
+      description: 'Retrieval-augmented generation pipelines with grounded, production-ready responses.',
+      chips: ['RAG Systems', 'LangChain', 'Google Gemini 2.5', 'ChromaDB', 'Vector Search', 'Prompt Engineering'],
+    },
+    {
+      title: 'DevOps & Cloud',
+      icon: <FaCloud className="text-sky-300" />,
+      description: 'From local dev to production with CI/CD, containers, and cloud infrastructure.',
+      chips: ['Docker', 'Kubernetes', 'AWS EC2 · S3 · ECR', 'GitHub Actions', 'Nginx', 'Monitoring & Logging'],
+    },
   ];
 
-  const containerVariants = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: {
-        staggerChildren: 0.1
-      }
-    }
-  };
-
-  const itemVariants = {
-    hidden: { y: 20, opacity: 0 },
-    visible: {
-      y: 0,
-      opacity: 1
-    }
+  const chipVariants = {
+    hidden: { y: 8, opacity: 0 },
+    visible: { y: 0, opacity: 1 },
   };
 
   return (
-    <section className="py-20 relative">
-      {/* Background Elements */}
-      <div className="absolute inset-0 bg-gradient-to-b from-purple-900/20 via-transparent to-transparent"></div>
-      
-      <div className="container mx-auto px-4">
-        {/* Section Header */}
+    <section className="relative overflow-hidden bg-slate-950 py-24">
+      <div className="pointer-events-none absolute inset-0">
+        <div className="absolute -top-32 left-1/2 h-80 w-80 -translate-x-1/2 rounded-full bg-purple-500/25 blur-3xl" />
+        <div className="absolute -bottom-40 right-[-10%] h-96 w-96 rounded-full bg-indigo-500/20 blur-3xl" />
+        <div className="absolute -bottom-40 left-[-20%] h-80 w-80 rounded-full bg-cyan-500/15 blur-3xl" />
+      </div>
+
+      <div className="relative mx-auto max-w-6xl px-6 sm:px-8 lg:px-12">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
           className="text-center mb-16"
         >
-          <h2 className="text-4xl font-bold mb-4">
-            <span className="bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent">
+          <span className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-4 py-1 text-xs font-semibold uppercase tracking-[0.35em] text-purple-100/80">
+            <span className="inline-flex h-1.5 w-1.5 rounded-full bg-purple-400" />
+            {t('technologies.badge', { defaultValue: 'Tech Stack' })}
+          </span>
+          <h2 className="mt-6 text-4xl font-semibold text-white sm:text-5xl">
+            <span className="bg-gradient-to-r from-purple-400 via-indigo-400 to-cyan-300 bg-clip-text text-transparent">
               {t('technologies.titlePart1')}
             </span>
-            <span className="text-white">
-              {t('technologies.titlePart2')}
-            </span>
+            <span className="text-white"> {t('technologies.titlePart2')}</span>
           </h2>
+          <p className="mx-auto mt-5 max-w-2xl text-sm text-slate-300/90 sm:text-base">
+            {t('technologies.lead', {
+              defaultValue:
+                'A focused toolkit for shipping enterprise SaaS, AI-powered RAG platforms, and real-time web applications.',
+            })}
+          </p>
         </motion.div>
 
-        {/* Technologies Grid */}
-        <motion.div
-          variants={containerVariants}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true }}
-          className="space-y-12"
-        >
-          {technologies.map((category, idx) => (
-            <div key={idx} className="space-y-6">
-              <h3 className="text-2xl font-semibold text-white mb-6">
-                {category.category}
-              </h3>
-              <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-6">
-                {category.techs.map((tech, techIdx) => (
-                  <motion.div
-                    key={techIdx}
-                    variants={itemVariants}
-                    whileHover={{ scale: 1.05 }}
-                    className="bg-white/5 backdrop-blur-sm rounded-xl p-4 flex flex-col items-center justify-center gap-3 hover:bg-white/10 transition-colors"
-                  >
-                    <div className="text-4xl">
-                      {tech.icon}
-                    </div>
-                    <span className="text-sm text-gray-300">
-                      {tech.name}
-                    </span>
-                  </motion.div>
-                ))}
+        <div className="grid gap-8 md:grid-cols-2">
+          {categories.map((category, idx) => (
+            <motion.div
+              key={category.title}
+              initial={{ opacity: 0, y: 24 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: idx * 0.08 }}
+              className="group relative overflow-hidden rounded-3xl border border-white/10 bg-white/5 p-6 shadow-[0_20px_60px_-30px_rgba(99,102,241,0.7)] backdrop-blur-lg"
+            >
+              <div className="absolute -top-24 -right-24 h-40 w-40 rounded-full bg-purple-500/20 blur-3xl opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
+
+              <div className="relative flex items-start gap-4">
+                <div className={categoryIconClasses}>{category.icon}</div>
+                <div className="space-y-1">
+                  <h3 className="text-lg font-semibold text-white flex items-center gap-2">
+                    {category.title}
+                    {category.title === 'Frontend' && (
+                      <TbBrandNextjs className="text-sm text-slate-300 opacity-80" />
+                    )}
+                  </h3>
+                  <p className="text-xs text-slate-300/80 sm:text-sm">{category.description}</p>
+                </div>
               </div>
-            </div>
+
+              <motion.div
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true }}
+                transition={{ staggerChildren: 0.05, delayChildren: 0.15 }}
+                className="mt-5 flex flex-wrap gap-2"
+              >
+                {category.chips.map((chip) => (
+                  <motion.span
+                    key={chip}
+                    variants={chipVariants}
+                    whileHover={{ y: -3, scale: 1.03 }}
+                    className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-3 py-1.5 text-xs font-medium text-slate-100 shadow-[0_12px_35px_-24px_rgba(148,163,184,0.9)] transition-colors duration-300 hover:border-purple-300/70 hover:bg-purple-500/20"
+                  >
+                    <span className="h-1.5 w-1.5 rounded-full bg-gradient-to-r from-purple-400 to-cyan-300" />
+                    {chip}
+                  </motion.span>
+                ))}
+              </motion.div>
+            </motion.div>
           ))}
-        </motion.div>
+        </div>
       </div>
     </section>
   );

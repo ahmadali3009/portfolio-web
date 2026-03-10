@@ -100,25 +100,27 @@ const Home = () => {
         <div className="absolute inset-0 bg-[linear-gradient(110deg,rgba(244,114,182,0.08)_0%,rgba(255,255,255,0)_45%)]" />
       </div>
 
-      <div className="relative mx-auto max-w-6xl px-6 pt-28 pb-24 sm:px-8 sm:pt-36 md:px-12 lg:px-16 lg:pt-40">
-        <div className="grid items-start gap-16 lg:grid-cols-[minmax(0,1.1fr)_minmax(0,0.9fr)] lg:gap-x-20 xl:gap-x-24">
-          <div className="relative flex flex-col gap-9 lg:pr-12">
+      <div className="relative mx-auto max-w-6xl px-4 pt-12 pb-10 sm:px-6 sm:pt-16 md:px-8 lg:px-12 lg:pt-20">
+        <div className="grid items-start gap-6 lg:grid-cols-[minmax(0,1.1fr)_minmax(0,0.9fr)] lg:gap-x-10 xl:gap-x-12">
+          <div className="relative flex flex-col gap-5 lg:pr-6">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6 }}
-              className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-4 py-2 text-xs font-semibold uppercase tracking-[0.35em] text-purple-100/80"
+              className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-3 py-1.5 text-[0.65rem] font-semibold uppercase tracking-widest text-purple-100/80"
             >
               <span className="inline-flex h-1.5 w-1.5 rounded-full bg-purple-400" />
-              {t('home.badge', { defaultValue: 'Building next-gen web experiences' })}
+              {t('home.badge', {
+                defaultValue: 'Building AI-powered SaaS & real-time platforms · Open to remote roles',
+              })}
             </motion.div>
 
-            <div className="space-y-6 max-w-3xl">
+            <div className="space-y-4 max-w-3xl">
               <motion.h1
                 initial={{ opacity: 0, y: 24 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 0.1 }}
-                className="text-4xl font-semibold text-white sm:text-5xl md:text-6xl lg:text-7xl"
+                className="text-3xl font-semibold text-white sm:text-4xl md:text-5xl lg:text-6xl"
               >
                 <span className="block text-slate-200">
                   {homeContent.greeting}
@@ -142,10 +144,10 @@ const Home = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.22 }}
-              className="flex flex-wrap items-center gap-2 text-xs uppercase tracking-[0.35em] text-purple-100/70"
+              className="flex flex-wrap items-center gap-2 text-[0.65rem] uppercase tracking-widest text-purple-100/70"
             >
-              <span className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-3 py-2">
-                {t('home.availability', { defaultValue: 'Available for contract & remote roles' })}
+              <span className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-3 py-1.5">
+                {t('home.availability', { defaultValue: 'Building AI-powered SaaS & real-time platforms · Open to remote roles' })}
               </span>
             </motion.div>
 
@@ -153,14 +155,14 @@ const Home = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.25 }}
-              className="flex flex-wrap items-center gap-4"
+              className="flex flex-wrap items-center gap-3"
             >
               <motion.a
                 href="/Resume.pdf"
                 download
                 whileHover={{ scale: 1.04 }}
                 whileTap={{ scale: 0.97 }}
-                className="inline-flex items-center gap-2 rounded-full bg-gradient-to-r from-purple-500 via-indigo-500 to-cyan-400 px-6 py-3 text-sm font-semibold text-white shadow-[0_20px_45px_-20px_rgba(99,102,241,0.9)] transition-shadow duration-300 hover:shadow-[0_25px_55px_-18px_rgba(99,102,241,0.95)]"
+                className="inline-flex items-center gap-2 rounded-full bg-gradient-to-r from-purple-500 via-indigo-500 to-cyan-400 px-5 py-2.5 text-sm font-semibold text-white shadow-[0_20px_45px_-20px_rgba(99,102,241,0.9)] transition-shadow duration-300 hover:shadow-[0_25px_55px_-18px_rgba(99,102,241,0.95)]"
               >
                 <HiDownload className="text-lg" />
                 {t('home.actions.resume', { defaultValue: 'Download CV' })}
@@ -168,18 +170,18 @@ const Home = () => {
               <motion.a
                 href="#projects"
                 whileHover={{ x: 4 }}
-                className="inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/5 px-6 py-3 text-sm font-semibold text-slate-100 transition-colors duration-300 hover:border-white/35 hover:bg-white/10"
+                className="inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/5 px-5 py-2.5 text-sm font-semibold text-slate-100 transition-colors duration-300 hover:border-white/35 hover:bg-white/10"
               >
                 <span>{t('home.actions.projects', { defaultValue: 'View Projects' })}</span>
                 <HiArrowNarrowRight className="text-lg" />
               </motion.a>
-              <div className="flex gap-3">
+              <div className="flex gap-2">
                 <motion.a
                   href="https://github.com/ahmadali3009"
                   target="_blank"
                   rel="noopener noreferrer"
                   whileHover={{ scale: 1.08 }}
-                  className="flex h-11 w-11 items-center justify-center rounded-full border border-white/15 bg-white/5 text-white transition-colors duration-300 hover:border-white/35 hover:bg-white/10"
+                  className="flex h-10 w-10 items-center justify-center rounded-full border border-white/15 bg-white/5 text-white transition-colors duration-300 hover:border-white/35 hover:bg-white/10"
                 >
                   <FaGithub className="text-xl" />
                 </motion.a>
@@ -188,7 +190,7 @@ const Home = () => {
                   target="_blank"
                   rel="noopener noreferrer"
                   whileHover={{ scale: 1.08 }}
-                  className="flex h-11 w-11 items-center justify-center rounded-full border border-white/15 bg-white/5 text-white transition-colors duration-300 hover:border-white/35 hover:bg-white/10"
+                  className="flex h-10 w-10 items-center justify-center rounded-full border border-white/15 bg-white/5 text-white transition-colors duration-300 hover:border-white/35 hover:bg-white/10"
                 >
                   <FaLinkedin className="text-xl" />
                 </motion.a>
@@ -215,19 +217,19 @@ const Home = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.3 }}
-              className="grid grid-cols-2 gap-3 pt-6 sm:grid-cols-4"
+              className="grid grid-cols-2 gap-2 pt-4 sm:grid-cols-4"
             >
               {[
-                { value: '3+', label: t('home.stats.experience', { defaultValue: 'Years Delivering' }) },
+                { value: '5+', label: t('home.stats.experience', { defaultValue: 'Years in Production' }) },
                 { value: '20+', label: t('home.stats.projects', { defaultValue: 'Projects Launched' }) },
                 { value: '6', label: t('home.stats.featured', { defaultValue: 'Featured Builds' }) },
                 { value: '15+', label: t('home.stats.stack', { defaultValue: 'Technologies' }) },
               ].map((stat) => (
-                <div key={stat.label} className="flex flex-col rounded-2xl border border-white/10 bg-white/5 px-4 py-6 text-left shadow-[0_20px_60px_-45px_rgba(99,102,241,0.85)] backdrop-blur-md sm:text-center">
-                  <span className="text-2xl font-semibold text-white sm:text-3xl">
+                <div key={stat.label} className="flex flex-col items-center justify-center rounded-2xl border border-white/10 bg-white/5 px-2 py-4 text-center shadow-[0_20px_60px_-45px_rgba(99,102,241,0.85)] backdrop-blur-md">
+                  <span className="text-xl font-semibold text-white sm:text-2xl">
                     {stat.value}
                   </span>
-                  <span className="mt-2 text-xs font-medium uppercase tracking-[0.25em] text-slate-300/70 sm:text-[0.7rem]">
+                  <span className="mt-1 text-[0.60rem] font-medium uppercase tracking-widest text-slate-300/70 text-balance">
                     {stat.label}
                   </span>
                 </div>
@@ -238,13 +240,13 @@ const Home = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.35 }}
-              className="flex flex-col gap-4 pt-4 sm:flex-row sm:flex-wrap"
+              className="flex flex-col gap-3 pt-2 sm:flex-row sm:flex-wrap"
             >
               {highlightChips.map((item) => (
                 <motion.li
                   key={item.id}
                   whileHover={{ y: -6 }}
-                  className="group relative min-w-[240px] flex-1 overflow-hidden rounded-3xl border border-white/10 bg-white/5 px-5 py-5 shadow-[0_18px_60px_-45px_rgba(99,102,241,0.8)] backdrop-blur-lg transition-all duration-300 hover:border-white/25 hover:bg-white/10"
+                  className="group relative min-w-[200px] flex-1 overflow-hidden rounded-3xl border border-white/10 bg-white/5 px-4 py-4 shadow-[0_18px_60px_-45px_rgba(99,102,241,0.8)] backdrop-blur-lg transition-all duration-300 hover:border-white/25 hover:bg-white/10"
                 >
                   <div className="absolute inset-0 bg-gradient-to-br from-white/0 via-white/12 to-white/0 opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
                   <div className="flex items-center gap-3">

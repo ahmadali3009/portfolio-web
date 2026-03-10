@@ -2,14 +2,32 @@ import React from 'react';
 import { motion } from "framer-motion";
 import { useTranslation } from 'react-i18next';
 import {
-  FaReact, FaNodeJs, FaGitAlt, FaPhp,
-  FaHtml5, FaCss3Alt, FaDocker, FaSass
+  FaReact,
+  FaNodeJs,
+  FaGitAlt,
+  FaPhp,
+  FaHtml5,
+  FaCss3Alt,
+  FaDocker,
+  FaSass,
+  FaBrain,
+  FaCloud,
+  FaDatabase
 } from 'react-icons/fa';
 import {
-  SiJavascript, SiTypescript, SiMongodb,
-  SiExpress, SiRedux, SiTailwindcss,
-  SiNextdotjs, SiFirebase, SiPostgresql,
-  SiMysql, SiFastify, SiKubernetes
+  SiJavascript,
+  SiTypescript,
+  SiMongodb,
+  SiExpress,
+  SiRedux,
+  SiTailwindcss,
+  SiNextdotjs,
+  SiFirebase,
+  SiPostgresql,
+  SiMysql,
+  SiFastify,
+  SiKubernetes,
+  SiRedis
 } from 'react-icons/si';
 
 const clusterPalette = [
@@ -58,8 +76,8 @@ const clusters = [
   },
   {
     key: "backend",
-    defaultLabel: "APIs & Data",
-    defaultHint: "Secure endpoints, data pipelines, and integration-first architecture.",
+    defaultLabel: "APIs, Data & Queues",
+    defaultHint: "Secure services, data stores, and async workers for multi-tenant SaaS.",
     skills: [
       { name: "Node.js", icon: <FaNodeJs /> },
       { name: "Express.js", icon: <SiExpress /> },
@@ -67,7 +85,19 @@ const clusters = [
       { name: "PHP", icon: <FaPhp /> },
       { name: "MongoDB", icon: <SiMongodb /> },
       { name: "PostgreSQL", icon: <SiPostgresql /> },
-      { name: "MySQL", icon: <SiMysql /> }
+      { name: "MySQL", icon: <SiMysql /> },
+      { name: "Redis / BullMQ", icon: <SiRedis /> }
+    ]
+  },
+  {
+    key: "ai_rag",
+    defaultLabel: "AI / RAG Systems",
+    defaultHint: "Retrieval-augmented generation pipelines with grounded, auditable answers.",
+    skills: [
+      { name: "RAG Architectures", icon: <FaBrain /> },
+      { name: "LangChain", icon: <FaBrain /> },
+      { name: "Google Gemini", icon: <FaCloud /> },
+      { name: "ChromaDB / Vector DBs", icon: <FaDatabase /> }
     ]
   },
   {

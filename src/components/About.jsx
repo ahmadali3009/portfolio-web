@@ -40,14 +40,14 @@ const About = () => {
       title: 'System Architecture',
       level: 90,
       gradient: 'from-emerald-400 via-teal-500 to-cyan-400',
-      description: 'Microservices, APIs, Scalability'
+      description: 'Microservices, distributed systems, RAG platforms, scalability'
     }
   ];
 
   const highlights = [
     {
       icon: <FiAward className="text-xl" />,
-      value: '3+',
+      value: '5+',
       label: 'Years Experience',
       color: 'from-purple-400 to-indigo-400'
     },
@@ -194,7 +194,7 @@ const About = () => {
               <p className="text-sm leading-relaxed text-slate-300/90 sm:text-base">
                 {t('about.content', {
                   defaultValue:
-                    "A passionate full-stack developer with 3+ years of experience building scalable web applications. I specialize in React, Next.js, and Node.js, with a keen eye for design and user experience. I love turning complex problems into simple, beautiful solutions.",
+                    "A passionate full-stack engineer with 5+ years of experience building scalable backend systems, multi-tenant SaaS platforms, RAG-powered applications, and real-time web experiences. I specialize in React, Next.js, Node.js, and TypeScript with a strong focus on system design, performance, and delightful UX.",
                 })}
               </p>
 
