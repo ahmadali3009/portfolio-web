@@ -1,5 +1,5 @@
-import React from 'react';
-import { motion } from "framer-motion";
+import React, { useMemo, useState } from 'react';
+import { motion, AnimatePresence, useMotionValue, useMotionTemplate } from "framer-motion";
 import { useTranslation } from 'react-i18next';
 import {
   FaReact,
@@ -29,24 +29,6 @@ import {
   SiKubernetes,
   SiRedis
 } from 'react-icons/si';
-
-const clusterPalette = [
-  {
-    border: "from-purple-500/70 via-indigo-500/30 to-transparent",
-    glow: "from-purple-400/40 via-indigo-400/10 to-transparent",
-    accent: "from-purple-400 via-indigo-400 to-cyan-400"
-  },
-  {
-    border: "from-fuchsia-500/70 via-purple-600/30 to-transparent",
-    glow: "from-fuchsia-400/30 via-purple-500/10 to-transparent",
-    accent: "from-fuchsia-400 via-purple-400 to-blue-400"
-  },
-  {
-    border: "from-emerald-500/70 via-teal-500/30 to-transparent",
-    glow: "from-emerald-400/30 via-teal-400/10 to-transparent",
-    accent: "from-emerald-400 via-teal-400 to-sky-400"
-  }
-];
 
 const chipGradients = [
   "from-purple-400 via-indigo-400 to-cyan-300",
@@ -113,25 +95,81 @@ const clusters = [
   }
 ];
 
+const SkillTile = ({ skill, gradient, index }) => {
+  // Cursor-following spotlight — the premium 2026 touch.
+  const mouseX = useMotionValue(0);
+  const mouseY = useMotionValue(0);
+  const spotlight = useMotionTemplate`radial-gradient(220px circle at ${mouseX}px ${mouseY}px, rgba(255,255,255,0.12), transparent 70%)`;
+
+  const handleMouseMove = (event) => {
+    const rect = event.currentTarget.getBoundingClientRect();
+    mouseX.set(event.clientX - rect.left);
+    mouseY.set(event.clientY - rect.top);
+  };
+
+  return (
+    <motion.div
+      layout
+      initial={{ opacity: 0, scale: 0.85, y: 16 }}
+      animate={{ opacity: 1, scale: 1, y: 0 }}
+      exit={{ opacity: 0, scale: 0.85, y: -8 }}
+      transition={{ duration: 0.35, delay: index * 0.03, ease: [0.17, 0.55, 0.55, 1] }}
+      whileHover={{ y: -6 }}
+      onMouseMove={handleMouseMove}
+      className="group/tech relative flex flex-col items-center gap-3 overflow-hidden rounded-2xl border border-white/10 bg-white/5 px-4 py-6 text-center backdrop-blur-sm transition-colors duration-300 hover:border-white/25"
+    >
+      {/* cursor spotlight layer */}
+      <motion.div
+        className="pointer-events-none absolute inset-0 opacity-0 transition-opacity duration-300 group-hover/tech:opacity-100"
+        style={{ background: spotlight }}
+      />
+
+      <span className={`relative flex h-14 w-14 items-center justify-center rounded-2xl bg-gradient-to-br ${gradient} text-2xl text-white shadow-[0_18px_45px_-25px_rgba(99,102,241,0.9)] transition-transform duration-300 group-hover/tech:scale-110`}>
+        <span className="absolute inset-0 rounded-2xl bg-white/0 transition-colors duration-300 group-hover/tech:bg-white/10" />
+        <span className="relative drop-shadow-[0_0_12px_rgba(255,255,255,0.5)]">
+          {skill.icon}
+        </span>
+      </span>
+      <span className="relative text-xs font-medium text-slate-200 transition-colors duration-300 group-hover/tech:text-white sm:text-sm">
+        {skill.name}
+      </span>
+    </motion.div>
+  );
+};
+
 const Skillsicon = () => {
   const { t } = useTranslation();
+  const [activeKey, setActiveKey] = useState("all");
 
-  const containerVariants = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: { staggerChildren: 0.15, delayChildren: 0.2 }
-    }
-  };
+  const tabs = useMemo(
+    () => [
+      { key: "all", defaultLabel: "All Stack" },
+      ...clusters.map((cluster) => ({ key: cluster.key, defaultLabel: cluster.defaultLabel }))
+    ],
+    []
+  );
 
-  const cardVariants = {
-    hidden: { opacity: 0, y: 30 },
-    visible: {
-      opacity: 1,
-      y: 0,
-      transition: { duration: 0.6, ease: [0.17, 0.55, 0.55, 1] }
-    }
-  };
+  const visibleSkills = useMemo(() => {
+    const source =
+      activeKey === "all"
+        ? clusters.flatMap((cluster, ci) =>
+            cluster.skills.map((skill, si) => ({ skill, gradientIndex: ci + si }))
+          )
+        : (clusters.find((cluster) => cluster.key === activeKey)?.skills || []).map(
+            (skill, si) => ({ skill, gradientIndex: si })
+          );
+    return source;
+  }, [activeKey]);
+
+  const activeHint =
+    activeKey === "all"
+      ? t('technologies.lead', {
+          defaultValue:
+            'The frameworks, runtimes, and delivery tools that power polished interfaces, scalable APIs, and reliable releases.'
+        })
+      : t(`technologies.descriptions.${activeKey}`, {
+          defaultValue: clusters.find((c) => c.key === activeKey)?.defaultHint
+        });
 
   return (
     <section className="relative overflow-hidden bg-slate-950 py-24">
@@ -160,78 +198,75 @@ const Skillsicon = () => {
           </h2>
           <p className="mx-auto mt-5 max-w-2xl text-sm text-slate-300/90 md:text-base">
             {t('technologies.lead', {
-              defaultValue: 'The frameworks, runtimes, and delivery tools that power polished interfaces, scalable APIs, and reliable releases.'
+              defaultValue:
+                'The frameworks, runtimes, and delivery tools that power polished interfaces, scalable APIs, and reliable releases.'
             })}
           </p>
         </motion.div>
 
+        {/* Category segmented control */}
         <motion.div
-          variants={containerVariants}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, amount: 0.2 }}
-          className="mt-16 flex flex-col gap-10"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.3 }}
+          transition={{ duration: 0.5, delay: 0.1 }}
+          className="mt-12 flex flex-wrap items-center justify-center gap-2"
         >
-          {clusters.map((cluster, clusterIndex) => {
-            const palette = clusterPalette[clusterIndex % clusterPalette.length];
-            const label = t(`technologies.categories.${cluster.key}`, { defaultValue: cluster.defaultLabel });
-            const hint = t(`technologies.descriptions.${cluster.key}`, { defaultValue: cluster.defaultHint });
+          {tabs.map((tab) => {
+            const isActive = tab.key === activeKey;
+            const label = t(`technologies.categories.${tab.key}`, { defaultValue: tab.defaultLabel });
 
             return (
-              <motion.div
-                key={cluster.key}
-                variants={cardVariants}
-                className="group relative overflow-hidden rounded-3xl border border-white/5 bg-white/5 p-[1px] shadow-[0_25px_70px_-40px_rgba(99,102,241,0.85)] backdrop-blur-sm"
+              <button
+                key={tab.key}
+                type="button"
+                onClick={() => setActiveKey(tab.key)}
+                className={`relative rounded-full px-4 py-2 text-xs font-medium transition-colors duration-300 sm:text-sm ${
+                  isActive ? 'text-white' : 'text-slate-300/70 hover:text-white'
+                }`}
               >
-                <div className={`absolute -inset-[1px] rounded-3xl bg-gradient-to-br ${palette.border} opacity-90 transition-opacity duration-500 group-hover:opacity-100`} />
-                <div className="relative h-full rounded-3xl bg-slate-950/80 px-6 py-7 md:px-8 md:py-9">
-                  <div className="pointer-events-none absolute -top-24 -right-8 h-40 w-40 rounded-full bg-gradient-to-br from-white/20 via-transparent to-transparent blur-3xl opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
-
-                  <div className="flex flex-col gap-5 md:flex-row md:items-center md:justify-between">
-                    <div className="space-y-3">
-                      <h3 className="text-lg font-semibold text-white md:text-xl">
-                        {label}
-                      </h3>
-                      <p className="max-w-xl text-sm text-slate-300/85 md:text-base">
-                        {hint}
-                      </p>
-                    </div>
-                    <div className="flex flex-wrap justify-start gap-2 text-[0.65rem] uppercase tracking-[0.35em] text-purple-100/60 md:justify-end">
-                      <span className="rounded-full border border-white/10 px-3 py-1">
-                        {t('technologies.labels.focus', { defaultValue: 'Focus' })}
-                      </span>
-                      <span className="rounded-full border border-white/10 px-3 py-1">
-                        {t('technologies.labels.impact', { defaultValue: 'Impact' })}
-                      </span>
-                    </div>
-                  </div>
-
-                  <div className="mt-7 grid grid-cols-2 gap-3 sm:grid-cols-3 md:grid-cols-4 xl:grid-cols-5">
-                    {cluster.skills.map((skill, skillIndex) => {
-                      const gradient = chipGradients[(skillIndex + clusterIndex) % chipGradients.length];
-
-                      return (
-                        <motion.span
-                          key={skill.name}
-                          whileHover={{ y: -4, scale: 1.02 }}
-                          className="group/tech relative flex items-center gap-3 overflow-hidden rounded-2xl border border-white/10 bg-white/5 px-3 py-2 transition-all duration-300 hover:border-white/25 hover:bg-white/10"
-                        >
-                          <span className={`flex h-9 w-9 items-center justify-center rounded-xl bg-gradient-to-br ${gradient} text-lg text-white shadow-[0_15px_40px_-25px_rgba(99,102,241,0.85)]`}>
-                            <span className="relative drop-shadow-[0_0_10px_rgba(255,255,255,0.45)]">
-                              {skill.icon}
-                            </span>
-                          </span>
-                          <span className="text-xs font-medium text-white sm:text-sm">
-                            {skill.name}
-                          </span>
-                        </motion.span>
-                      );
-                    })}
-                  </div>
-                </div>
-              </motion.div>
+                {isActive && (
+                  <motion.span
+                    layoutId="skill-tab-pill"
+                    transition={{ type: "spring", stiffness: 400, damping: 32 }}
+                    className="absolute inset-0 rounded-full border border-white/15 bg-gradient-to-r from-purple-500/30 via-indigo-500/25 to-cyan-400/25 shadow-[0_15px_40px_-22px_rgba(99,102,241,0.95)]"
+                  />
+                )}
+                <span className="relative z-10">{label}</span>
+              </button>
             );
           })}
+        </motion.div>
+
+        {/* Active category hint */}
+        <AnimatePresence mode="wait">
+          <motion.p
+            key={activeKey}
+            initial={{ opacity: 0, y: 6 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -6 }}
+            transition={{ duration: 0.3 }}
+            className="mx-auto mt-6 max-w-xl text-center text-sm text-slate-400"
+          >
+            {activeHint}
+          </motion.p>
+        </AnimatePresence>
+
+        {/* Skill grid */}
+        <motion.div
+          layout
+          className="mt-10 grid grid-cols-2 gap-4 sm:grid-cols-3 md:grid-cols-4 xl:grid-cols-5"
+        >
+          <AnimatePresence mode="popLayout">
+            {visibleSkills.map(({ skill, gradientIndex }, index) => (
+              <SkillTile
+                key={`${activeKey}-${skill.name}`}
+                skill={skill}
+                index={index}
+                gradient={chipGradients[gradientIndex % chipGradients.length]}
+              />
+            ))}
+          </AnimatePresence>
         </motion.div>
       </div>
     </section>
