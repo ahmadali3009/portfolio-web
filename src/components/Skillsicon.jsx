@@ -96,7 +96,7 @@ const clusters = [
 ];
 
 const SkillTile = ({ skill, gradient, index }) => {
-  // Cursor-following spotlight — the premium 2026 touch.
+  // Cursor-following spotlight — the premium 2026 touch.......
   const mouseX = useMotionValue(0);
   const mouseY = useMotionValue(0);
   const spotlight = useMotionTemplate`radial-gradient(220px circle at ${mouseX}px ${mouseY}px, rgba(255,255,255,0.12), transparent 70%)`;
